@@ -1,0 +1,15 @@
+*.spec
+*.pyc
+*.old
+*.zip
+*.7z
+.pythonhistory
+modules/__pycache__/
+sessions/
+static/PDF/
+uploads/
+errors/
+languages/
+cron/
+databases/
+private/
