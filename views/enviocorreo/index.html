@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+
+{{=formulario}}
+
+
+
+{{block page_js}}
+<script type="text/javascript">
+var intervalo=0;
+function BuscarEstado(){
+    ajax('{{=URL(BuscarEstado,vars=dict("id"=tarea))}}','',':eval');
+    clearInterval(repeticion);
+  }
+
+{{if "tarea" in globals():}}
+  var intervalo = setInterval("BuscarEstado()",600000);
+{{pass}}
+
+</script>
+{{end page_js}}

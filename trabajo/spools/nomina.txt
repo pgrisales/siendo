@@ -1,0 +1,1185 @@
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00001  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/06/20  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1130635475    AGUADO VALENCIA DIANA CAROLIN1130635475    AGUADO VALENCIA DIANA CAROLIN                                                           001 SUELDO                           112.95    389,732.00
+                                                           005 AUXILIO DE TRANSPORTE                       94,182.00
+                                                           020 COMISIONES                                 237,709.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   41,660.00
+                                                           515 APORTE PENSION OBLIGATORI                                  41,660.00
+                                                           573 LICENCIA NO REMUNERADA             7.05
+                                                           581 INTERES PRESTAMO                                                1.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    100,000.00                    50,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,130,635,475 NETO:       $588,302.00               T O T A L  --->                   721,623.00     133,321.00CEDULA DE CIUDADAN: 1,130,635,475 NETO:       $588,302.00               T O T A L  --->                   721,623.00     133,321.00
+CTA : 226510303CTA : 226510303
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00002  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2018/03/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144192857    ALZATE ALZATE JOHANA ANDREA1144192857    ALZATE ALZATE JOHANA ANDREA                                                           001 SUELDO                           112.00    463,745.00
+                                                           020 COMISIONES                                 974,226.00
+                                                           034 VACACIONES DIAS NO HABILE
+                                                           035 VACACIONES                         8.00     43,097.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   79,366.00
+                                                           515 APORTE PENSION OBLIGATORI                                  79,366.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,144,192,857 NETO:      $1322,336.00               T O T A L  --->         120.00   1481,068.00     158,732.00CEDULA DE CIUDADAN: 1,144,192,857 NETO:      $1322,336.00               T O T A L  --->         120.00   1481,068.00     158,732.00
+CTA : 347100414CTA : 347100414
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00003  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2017/08/22  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16937415      ALZATE NARANJO JHON EDWIN16937415      ALZATE NARANJO JHON EDWIN                                                           001 SUELDO                           120.00    414,058.00
+                                                           020 COMISIONES                                1319,014.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   85,885.00
+                                                           515 APORTE PENSION OBLIGATORI                                  85,885.00
+                                                           571 DCTO ANTICIPO SALARIAL                                    300,000.00
+                                                           581 INTERES PRESTAMO                                               37.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    246,741.00                   123,371.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    16,937,415 NETO:      $1137,894.00               T O T A L  --->                  1733,072.00     595,178.00CEDULA DE CIUDADAN:    16,937,415 NETO:      $1137,894.00               T O T A L  --->                  1733,072.00     595,178.00
+CTA : 146469044CTA : 146469044
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00004  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2017/06/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1143942172    ANGULO PALACIOS WANDER ALEXAN1143942172    ANGULO PALACIOS WANDER ALEXAN                                                           001 SUELDO                           120.00    435,000.00
+                                                           005 AUXILIO DE TRANSPORTE                       96,943.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   34,768.00
+                                                           515 APORTE PENSION OBLIGATORI                                  34,768.00
+                                                           598 LIBRANZA DAVIVIENDA                                        85,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,143,942,172 NETO:       $377,407.00               T O T A L  --->         120.00    531,943.00     154,536.00CEDULA DE CIUDADAN: 1,143,942,172 NETO:       $377,407.00               T O T A L  --->         120.00    531,943.00     154,536.00
+CTA : 146467816CTA : 146467816
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00005  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2015/10/07  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94450703      ARCE ALVAREZ DIEGO MAURICIO94450703      ARCE ALVAREZ DIEGO MAURICIO                                                           001 SUELDO                           119.33    411,746.00
+                                                           005 AUXILIO DE TRANSPORTE                       96,761.00
+                                                           020 COMISIONES                                 790,134.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   64,638.00
+                                                           515 APORTE PENSION OBLIGATORI                                  64,638.00
+                                                           571 DCTO ANTICIPO SALARIAL                                    200,000.00
+                                                           573 LICENCIA NO REMUNERADA              .67
+                                                           581 INTERES PRESTAMO                                               39.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    300,000.00                   100,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    94,450,703 NETO:       $869,326.00               T O T A L  --->                  1298,641.00     429,315.00CEDULA DE CIUDADAN:    94,450,703 NETO:       $869,326.00               T O T A L  --->                  1298,641.00     429,315.00
+CTA : 146458641CTA : 146458641
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00006  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2018/06/08  C.O: 001 OFICINA PRINCIPAL CA CARGO : COORDINADOR DE VENTAS EJE CA|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1088262443    ARCILA CARDONA ESTEFANIE1088262443    ARCILA CARDONA ESTEFANIE                                                           001 SUELDO                           120.00    636,000.00
+                                                           020 COMISIONES                                1990,471.00
+                                                           100 MEDIO DE TRANSPORTE                        400,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  130,499.00
+                                                           515 APORTE PENSION OBLIGATORI                                 130,499.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,088,262,443 NETO:      $2765,473.00               T O T A L  --->         120.00   3026,471.00     260,998.00CEDULA DE CIUDADAN: 1,088,262,443 NETO:      $2765,473.00               T O T A L  --->         120.00   3026,471.00     260,998.00
+CTA : 468925284CTA : 468925284
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00007  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2014/01/08  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1118291874    BATERO RUBIO DIEGO ARMANDO1118291874    BATERO RUBIO DIEGO ARMANDO                                                           001 SUELDO                           120.00    414,058.00
+                                                           020 COMISIONES                                 891,408.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   68,781.00
+                                                           515 APORTE PENSION OBLIGATORI                                  68,781.00
+                                                           598 LIBRANZA DAVIVIENDA                                       622,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,118,291,874 NETO:       $545,904.00               T O T A L  --->         120.00   1305,466.00     759,562.00CEDULA DE CIUDADAN: 1,118,291,874 NETO:       $545,904.00               T O T A L  --->         120.00   1305,466.00     759,562.00
+CTA : 391412590CTA : 391412590
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00008  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : CONTABILIDAD              Fech.Ingreso: 2016/01/04  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE CONTABILIDAD      |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+66977329      BETANCOURT CHAVEZ SANDRA PATR66977329      BETANCOURT CHAVEZ SANDRA PATR                                                           001 SUELDO                           120.00    828,115.00
+                                                           005 AUXILIO DE TRANSPORTE                       84,094.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   65,336.00
+                                                           515 APORTE PENSION OBLIGATORI                                  65,336.00
+                                                           581 INTERES PRESTAMO                                                2.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST                                  50,000.00
+                                                           598 LIBRANZA DAVIVIENDA                                       137,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    66,977,329 NETO:       $594,535.00               T O T A L  --->         120.00    912,209.00     317,674.00CEDULA DE CIUDADAN:    66,977,329 NETO:       $594,535.00               T O T A L  --->         120.00    912,209.00     317,674.00
+CTA : 146459573CTA : 146459573
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00009  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2018/06/07  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144210008    CAICEDO BOLIVAR BRAYAN ARMAND1144210008    CAICEDO BOLIVAR BRAYAN ARMAND                                                           001 SUELDO                           120.00    435,000.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   42,525.00
+                                                           515 APORTE PENSION OBLIGATORI                                  42,525.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,144,210,008 NETO:       $446,982.00               T O T A L  --->         120.00    532,032.00      85,050.00CEDULA DE CIUDADAN: 1,144,210,008 NETO:       $446,982.00               T O T A L  --->         120.00    532,032.00      85,050.00
+CTA : 146541867CTA : 146541867
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00010  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2018/01/23  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1005934470    CAICEDO VIVAS JORGE DUVAN1005934470    CAICEDO VIVAS JORGE DUVAN                                                           001 SUELDO                           119.25    432,281.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   42,444.00
+                                                           515 APORTE PENSION OBLIGATORI                                  42,444.00
+                                                           573 LICENCIA NO REMUNERADA              .75
+                                                           581 INTERES PRESTAMO                                                7.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    250,000.00                    50,000.00
+                                                           598 LIBRANZA DAVIVIENDA                                        32,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,005,934,470 NETO:       $362,418.00               T O T A L  --->                   529,313.00     166,895.00CEDULA DE CIUDADAN: 1,005,934,470 NETO:       $362,418.00               T O T A L  --->                   529,313.00     166,895.00
+CTA : 249412826CTA : 249412826
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00011  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2012/09/10  C.O: 001 OFICINA PRINCIPAL CA CARGO : DISE¥ADOR GRAFICO           |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1143951392    GOMEZ CALVO MIGUEL ANGEL1143951392    GOMEZ CALVO MIGUEL ANGEL                                                           001 SUELDO                           115.75    479,272.00
+                                                           005 AUXILIO DE TRANSPORTE                       94,707.00
+                                                           039 AUXILIO ALIMENTICIO                        100,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   38,797.00
+                                                           515 APORTE PENSION OBLIGATORI                                  38,797.00
+                                                           573 LICENCIA NO REMUNERADA             4.25
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  242,139.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,143,951,392 NETO:       $354,246.00               T O T A L  --->         115.75    673,979.00     319,733.00CEDULA DE CIUDADAN: 1,143,951,392 NETO:       $354,246.00               T O T A L  --->         115.75    673,979.00     319,733.00
+CTA : 146444773CTA : 146444773
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00012  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2012/01/04  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1130591484    GOMEZ VICTOR EDUARDO1130591484    GOMEZ VICTOR EDUARDO                                                           001 SUELDO                           120.00    414,058.00
+                                                           020 COMISIONES                                1102,646.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  109,268.00
+                                                           515 APORTE PENSION OBLIGATORI                                 109,268.00
+                                                           581 INTERES PRESTAMO                                               33.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST     66,693.00                    22,231.00
+                                                           598 LIBRANZA DAVIVIENDA                                       218,500.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,130,591,484 NETO:      $1057,404.00               T O T A L  --->                  1516,704.00     459,300.00CEDULA DE CIUDADAN: 1,130,591,484 NETO:      $1057,404.00               T O T A L  --->                  1516,704.00     459,300.00
+CTA : 146444781CTA : 146444781
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00013  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/08/27  C.O: 001 OFICINA PRINCIPAL CA CARGO : CONDUCTOR                   |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16715321      GONZALEZ LERMA DIEGO16715321      GONZALEZ LERMA DIEGO                                                           001 SUELDO                            32.00    119,903.00
+                                                           005 AUXILIO DE TRANSPORTE                       12,938.00
+                                                           510 APORTE SALUD OBLIGATORIA                                    4,796.00
+                                                           515 APORTE PENSION OBLIGATORI                                   4,796.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    16,715,321 NETO:       $123,249.00               T O T A L  --->          32.00    132,841.00       9,592.00CEDULA DE CIUDADAN:    16,715,321 NETO:       $123,249.00               T O T A L  --->          32.00    132,841.00       9,592.00
+CTA : 146565395CTA : 146565395
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00014  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : CONTABILIDAD              Fech.Ingreso: 2019/06/27  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR CONTABLE           |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1114819921    GUTIERREZ GONZALEZ ELIANA1114819921    GUTIERREZ GONZALEZ ELIANA                                                           001 SUELDO                           112.00    406,000.00
+                                                           005 AUXILIO DE TRANSPORTE                       90,563.00
+                                                           050 INCAPACIDAD PAGADA POR LA                   29,000.00
+                                                           051 INCAPACIDAD POR ENFERMEDA          8.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   34,800.00
+                                                           515 APORTE PENSION OBLIGATORI                                  34,800.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,114,819,921 NETO:       $455,963.00               T O T A L  --->         120.00    525,563.00      69,600.00CEDULA DE CIUDADAN: 1,114,819,921 NETO:       $455,963.00               T O T A L  --->         120.00    525,563.00      69,600.00
+CTA : 146562210CTA : 146562210
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00015  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : MANTENIMIENTO Y DIAGNOST  Fech.Ingreso: 2016/03/15  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR DE TALLER          |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144053008    GUZMAN QUINCHIA JUAN CAMILO1144053008    GUZMAN QUINCHIA JUAN CAMILO                                                           001 SUELDO                           120.00    496,870.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           020 COMISIONES                                 400,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   55,750.00
+                                                           515 APORTE PENSION OBLIGATORI                                  55,750.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST                                  20,000.00
+                                                           598 LIBRANZA DAVIVIENDA                                       296,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,144,053,008 NETO:       $566,402.00               T O T A L  --->         120.00    993,902.00     427,500.00CEDULA DE CIUDADAN: 1,144,053,008 NETO:       $566,402.00               T O T A L  --->         120.00    993,902.00     427,500.00
+CTA : 180548653CTA : 180548653
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00016  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2014/09/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16939239      HENAO ANDRADE MILTON JAVIER16939239      HENAO ANDRADE MILTON JAVIER                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       96,923.00
+                                                           020 COMISIONES                                 647,176.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   58,974.00
+                                                           515 APORTE PENSION OBLIGATORI                                  58,974.00
+                                                           519 EMBARGO                                                   129,249.00
+                                                           571 DCTO ANTICIPO SALARIAL                                     30,000.00
+                                                           581 INTERES PRESTAMO                                               75.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    600,000.00                   100,000.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST                                  65,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    16,939,239 NETO:       $715,885.00               T O T A L  --->                  1158,157.00     442,272.00CEDULA DE CIUDADAN:    16,939,239 NETO:       $715,885.00               T O T A L  --->                  1158,157.00     442,272.00
+CTA : 146451539CTA : 146451539
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00017  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES DE ADMON POR D  Fech.Ingreso: 2018/02/22  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR TESORERIA Y CARTERA|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1143880127    HOLGUIN MUNOZ NATALIA1143880127    HOLGUIN MUNOZ NATALIA                                                           001 SUELDO                           120.00    496,870.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   39,750.00
+                                                           515 APORTE PENSION OBLIGATORI                                  39,750.00
+                                                           581 INTERES PRESTAMO                                               46.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    150,000.00                   150,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,143,880,127 NETO:       $364,356.00               T O T A L  --->                   593,902.00     229,546.00CEDULA DE CIUDADAN: 1,143,880,127 NETO:       $364,356.00               T O T A L  --->                   593,902.00     229,546.00
+CTA : 146466511CTA : 146466511
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00018  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : MANTENIMIENTO Y DIAGNOST  Fech.Ingreso: 2009/01/22  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR DE TALLER          |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94537931      MALES DIAZ LEANDRO ROBINSON94537931      MALES DIAZ LEANDRO ROBINSON                                                           001 SUELDO                           104.00    502,390.00
+                                                           005 AUXILIO DE TRANSPORTE                       90,563.00
+                                                           034 VACACIONES DIAS NO HABILE
+                                                           035 VACACIONES                        24.00    105,567.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   47,856.00
+                                                           515 APORTE PENSION OBLIGATORI                                  47,856.00
+                                                           598 LIBRANZA DAVIVIENDA                                       136,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    94,537,931 NETO:       $466,808.00               T O T A L  --->         128.00    698,520.00     231,712.00CEDULA DE CIUDADAN:    94,537,931 NETO:       $466,808.00               T O T A L  --->         128.00    698,520.00     231,712.00
+CTA : 146444799CTA : 146444799
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00019  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : CONTABILIDAD              Fech.Ingreso: 2012/03/20  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR CONTABLE           |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1130625241    MARIN IGLESIAS CLARENA1130625241    MARIN IGLESIAS CLARENA                                                           001 SUELDO                           117.00    605,560.00
+                                                           005 AUXILIO DE TRANSPORTE                       95,819.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   49,066.00
+                                                           515 APORTE PENSION OBLIGATORI                                  49,066.00
+                                                           571 DCTO ANTICIPO SALARIAL                                     20,000.00
+                                                           573 LICENCIA NO REMUNERADA             3.00
+                                                           581 INTERES PRESTAMO                                               19.00
+                                                           592 PRESTAMO EDUCACION           340,200.00                    56,700.00
+                                                           598 LIBRANZA DAVIVIENDA                                       180,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,130,625,241 NETO:       $346,528.00               T O T A L  --->                   701,379.00     354,851.00CEDULA DE CIUDADAN: 1,130,625,241 NETO:       $346,528.00               T O T A L  --->                   701,379.00     354,851.00
+CTA : 146444807CTA : 146444807
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00020  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2008/01/09  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94486863      MARTINEZ ALVAREZ RAMIRO94486863      MARTINEZ ALVAREZ RAMIRO                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       96,749.00
+                                                           020 COMISIONES                                 537,335.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   54,521.00
+                                                           515 APORTE PENSION OBLIGATORI                                  54,521.00
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  132,693.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    94,486,863 NETO:       $806,407.00               T O T A L  --->         120.00   1048,142.00     241,735.00CEDULA DE CIUDADAN:    94,486,863 NETO:       $806,407.00               T O T A L  --->         120.00   1048,142.00     241,735.00
+CTA : 146444823CTA : 146444823
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00021  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/08/02  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1107522777    MARTINEZ GUTIERREZ JUAN CAMIL1107522777    MARTINEZ GUTIERREZ JUAN CAMIL                                                           001 SUELDO                           120.00    435,000.00
+                                                           005 AUXILIO DE TRANSPORTE                       93,798.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   33,640.00
+                                                           515 APORTE PENSION OBLIGATORI                                  33,640.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,107,522,777 NETO:       $461,518.00               T O T A L  --->         120.00    528,798.00      67,280.00CEDULA DE CIUDADAN: 1,107,522,777 NETO:       $461,518.00               T O T A L  --->         120.00    528,798.00      67,280.00
+CTA : 158623355CTA : 158623355
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00022  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2013/01/09  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94460286      MARTINEZ MUNOZ LUIS EDUARDO94460286      MARTINEZ MUNOZ LUIS EDUARDO                                                           001 SUELDO                           104.00    358,850.00
+                                                           005 AUXILIO DE TRANSPORTE                       77,626.00
+                                                           020 COMISIONES                                 787,610.00
+                                                           035 VACACIONES                        16.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   72,614.00
+                                                           515 APORTE PENSION OBLIGATORI                                  72,614.00
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  475,457.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    94,460,286 NETO:       $603,401.00               T O T A L  --->         120.00   1224,086.00     620,685.00CEDULA DE CIUDADAN:    94,460,286 NETO:       $603,401.00               T O T A L  --->         120.00   1224,086.00     620,685.00
+CTA : 146444815CTA : 146444815
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00023  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GERENCIA FINANCIERA       Fech.Ingreso: 2019/01/02  C.O: 001 OFICINA PRINCIPAL CA CARGO : SUBGERENTE                  |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+37803330      MEDINA TRAXLER MARTHA37803330      MEDINA TRAXLER MARTHA                                                           001 SUELDO                           120.00   1385,000.00
+                                                           100 MEDIO DE TRANSPORTE                        105,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  110,800.00
+                                                           576 DCTO. ANTICIPOS ENTREGADO                                 105,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    37,803,330 NETO:      $1274,200.00               T O T A L  --->         120.00   1490,000.00     215,800.00CEDULA DE CIUDADAN:    37,803,330 NETO:      $1274,200.00               T O T A L  --->         120.00   1490,000.00     215,800.00
+CTA : 470118191CTA : 470118191
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00024  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES DE OPERACION P  Fech.Ingreso: 2011/05/10  C.O: 001 OFICINA PRINCIPAL CA CARGO : TECNICO DE TALLER Y MANTENIM|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144130918    MENDOZA SANTACRUZ CARLOS FERN1144130918    MENDOZA SANTACRUZ CARLOS FERN                                                           001 SUELDO                           117.00    403,707.00
+                                                           005 AUXILIO DE TRANSPORTE                       95,819.00
+                                                           020 COMISIONES                                 320,704.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   65,392.00
+                                                           515 APORTE PENSION OBLIGATORI                                  65,392.00
+                                                           573 LICENCIA NO REMUNERADA             3.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,144,130,918 NETO:       $689,446.00               T O T A L  --->         117.00    820,230.00     130,784.00CEDULA DE CIUDADAN: 1,144,130,918 NETO:       $689,446.00               T O T A L  --->         117.00    820,230.00     130,784.00
+CTA : 146444831CTA : 146444831
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00025  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2015/07/21  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+10741390      MENESES REYES JOSE ANDRES10741390      MENESES REYES JOSE ANDRES                                                           001 SUELDO                           120.00    496,870.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   39,750.00
+                                                           515 APORTE PENSION OBLIGATORI                                  39,750.00
+                                                           598 LIBRANZA DAVIVIENDA                                       191,500.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    10,741,390 NETO:       $322,902.00               T O T A L  --->         120.00    593,902.00     271,000.00CEDULA DE CIUDADAN:    10,741,390 NETO:       $322,902.00               T O T A L  --->         120.00    593,902.00     271,000.00
+CTA : 484328604CTA : 484328604
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00026  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2001/06/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : JEFE DE BODEGA              |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+50955843      MONTERROZA MARTINEZ MONICA MA50955843      MONTERROZA MARTINEZ MONICA MA                                                           001 SUELDO                           120.00    579,681.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   46,374.00
+                                                           515 APORTE PENSION OBLIGATORI                                  46,374.00
+                                                           581 INTERES PRESTAMO                                               17.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    325,000.00                    25,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    50,955,843 NETO:       $558,948.00               T O T A L  --->                   676,713.00     117,765.00CEDULA DE CIUDADAN:    50,955,843 NETO:       $558,948.00               T O T A L  --->                   676,713.00     117,765.00
+CTA : 146444849CTA : 146444849
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00027  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : MANTENIMIENTO Y DIAGNOST  Fech.Ingreso: 2018/10/09  C.O: 001 OFICINA PRINCIPAL CA CARGO : APRENDIZ                    |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1107083123    MOSQUERA VARGAS ANDRES FELIPE1107083123    MOSQUERA VARGAS ANDRES FELIPE                                                           004 CUOTA APOYO SOSTENIMIENTO        120.00    414,058.00
+
+
+
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,107,083,123 NETO:       $414,058.00               T O T A L  --->         120.00    414,058.00CEDULA DE CIUDADAN: 1,107,083,123 NETO:       $414,058.00               T O T A L  --->         120.00    414,058.00
+CTA : 427072251CTA : 427072251
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00028  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/05/02  C.O: 001 OFICINA PRINCIPAL CA CARGO : APRENDIZ                    |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1109184999    OCAMPO LONDONO JUAN CAMILO1109184999    OCAMPO LONDONO JUAN CAMILO                                                           004 CUOTA APOYO SOSTENIMIENTO         90.00    310,544.00
+
+
+
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+T.I               : 1,109,184,999 NETO:       $310,544.00               T O T A L  --->          90.00    310,544.00T.I               : 1,109,184,999 NETO:       $310,544.00               T O T A L  --->          90.00    310,544.00
+CTA : 544256233CTA : 544256233
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00029  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2017/05/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1130597641    OROZCO CARDONA LEYDY JOHANA1130597641    OROZCO CARDONA LEYDY JOHANA                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           020 COMISIONES                                 472,563.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   52,027.00
+                                                           515 APORTE PENSION OBLIGATORI                                  52,027.00
+                                                           581 INTERES PRESTAMO                                               38.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    705,880.00                    58,824.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,130,597,641 NETO:       $820,737.00               T O T A L  --->                   983,653.00     162,916.00CEDULA DE CIUDADAN: 1,130,597,641 NETO:       $820,737.00               T O T A L  --->                   983,653.00     162,916.00
+CTA : 146466990CTA : 146466990
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00030  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2012/01/04  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16943204      PERLAZA MARTINEZ JUAN CARLOS16943204      PERLAZA MARTINEZ JUAN CARLOS                                                           001 SUELDO                            80.00    276,039.00
+                                                           020 COMISIONES                                1712,072.00
+                                                           034 VACACIONES DIAS NO HABILE                   70,044.00
+                                                           035 VACACIONES                        48.00    490,304.00
+                                                           100 MEDIO DE TRANSPORTE                        333,333.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  117,040.00
+                                                           515 APORTE PENSION OBLIGATORI                                 117,040.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    16,943,204 NETO:      $2647,712.00               T O T A L  --->         128.00   2881,792.00     234,080.00CEDULA DE CIUDADAN:    16,943,204 NETO:      $2647,712.00               T O T A L  --->         128.00   2881,792.00     234,080.00
+CTA : 146444864CTA : 146444864
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00031  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2017/01/11  C.O: 001 OFICINA PRINCIPAL CA CARGO : ANALISTA INVENTARIOS        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1095814576    PORRAS SALGADO DAVID FERNANDO1095814576    PORRAS SALGADO DAVID FERNANDO                                                           001 SUELDO                           120.00    538,276.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   43,062.00
+                                                           515 APORTE PENSION OBLIGATORI                                  43,062.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,095,814,576 NETO:       $549,184.00               T O T A L  --->         120.00    635,308.00      86,124.00CEDULA DE CIUDADAN: 1,095,814,576 NETO:       $549,184.00               T O T A L  --->         120.00    635,308.00      86,124.00
+CTA : 146465380CTA : 146465380
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00032  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : CONTABILIDAD              Fech.Ingreso: 2019/02/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR DE CARTERA         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1113682658    RENTERIA RIVERA KAREN DAYANA1113682658    RENTERIA RIVERA KAREN DAYANA                                                           001 SUELDO                           120.00    496,870.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   39,750.00
+                                                           515 APORTE PENSION OBLIGATORI                                  39,750.00
+                                                           581 INTERES PRESTAMO                                                4.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST                                 100,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,113,682,658 NETO:       $414,398.00               T O T A L  --->         120.00    593,902.00     179,504.00CEDULA DE CIUDADAN: 1,113,682,658 NETO:       $414,398.00               T O T A L  --->         120.00    593,902.00     179,504.00
+CTA : 134497114CTA : 134497114
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00033  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2018/05/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : ANALISTA DE LICITACION      |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16930588      RODRIGUEZ VASQUEZ CARLOS ANDR16930588      RODRIGUEZ VASQUEZ CARLOS ANDR                                                           001 SUELDO                           115.25    596,502.00
+                                                           005 AUXILIO DE TRANSPORTE                       91,675.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   46,944.00
+                                                           515 APORTE PENSION OBLIGATORI                                  46,944.00
+                                                           573 LICENCIA NO REMUNERADA            12.75
+                                                           581 INTERES PRESTAMO                                               29.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    450,000.00                    50,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    16,930,588 NETO:       $544,260.00               T O T A L  --->                   688,177.00     143,917.00CEDULA DE CIUDADAN:    16,930,588 NETO:       $544,260.00               T O T A L  --->                   688,177.00     143,917.00
+CTA : 146541271CTA : 146541271
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00034  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : DESPACHO TALLER           Fech.Ingreso: 2003/09/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : TECNICO DE TALLER Y MANTENIM|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+19365915      RUBIANO GUTIERREZ RICARDO19365915      RUBIANO GUTIERREZ RICARDO                                                           001 SUELDO                           104.00    358,850.00
+                                                           005 AUXILIO DE TRANSPORTE                       89,957.00
+                                                           020 COMISIONES                                 293,611.00
+                                                           050 INCAPACIDAD PAGADA POR LA                   99,068.00
+                                                           051 INCAPACIDAD POR ENFERMEDA         16.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   59,377.00
+                                                           515 APORTE PENSION OBLIGATORI                                  59,377.00
+                                                           519 EMBARGO                                                   131,263.00
+                                                           571 DCTO ANTICIPO SALARIAL                                     60,000.00
+                                                           581 INTERES PRESTAMO                                               19.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    300,000.00                   100,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    19,365,915 NETO:       $431,450.00               T O T A L  --->                   841,486.00     410,036.00CEDULA DE CIUDADAN:    19,365,915 NETO:       $431,450.00               T O T A L  --->                   841,486.00     410,036.00
+CTA : 146444872CTA : 146444872
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00035  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/07/22  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1130626158    SANDOVAL DUQUE ERIKA1130626158    SANDOVAL DUQUE ERIKA                                                           001 SUELDO                            80.00    276,039.00
+                                                           020 COMISIONES                                1510,076.00
+                                                           100 MEDIO DE TRANSPORTE                        239,167.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   88,007.00
+                                                           515 APORTE PENSION OBLIGATORI                                  88,007.00
+                                                           573 LICENCIA NO REMUNERADA            40.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,130,626,158 NETO:      $1849,268.00               T O T A L  --->          80.00   2025,282.00     176,014.00CEDULA DE CIUDADAN: 1,130,626,158 NETO:      $1849,268.00               T O T A L  --->          80.00   2025,282.00     176,014.00
+CTA : 991038910CTA : 991038910
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00036  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2013/01/09  C.O: 001 OFICINA PRINCIPAL CA CARGO : DIRECCION COMERCIAL         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16376517      SILVA RINCON LUIS ADOLFO16376517      SILVA RINCON LUIS ADOLFO                                                           001 SUELDO                           120.00    750,000.00
+                                                           020 COMISIONES                                 554,655.00
+                                                           100 MEDIO DE TRANSPORTE                        287,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   83,277.00
+                                                           515 APORTE PENSION OBLIGATORI                                  83,277.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    16,376,517 NETO:      $1425,101.00               T O T A L  --->         120.00   1591,655.00     166,554.00CEDULA DE CIUDADAN:    16,376,517 NETO:      $1425,101.00               T O T A L  --->         120.00   1591,655.00     166,554.00
+CTA : 146444898CTA : 146444898
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00037  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : SERVICIOS GENERALES       Fech.Ingreso: 2004/10/13  C.O: 001 OFICINA PRINCIPAL CA CARGO : OFICIOS VARIOS              |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+66857086      TOBAR MOSQUERA FERNANDA66857086      TOBAR MOSQUERA FERNANDA                                                           001 SUELDO                           119.08    493,060.00
+                                                           005 AUXILIO DE TRANSPORTE                       96,660.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   52,847.00
+                                                           515 APORTE PENSION OBLIGATORI                                  52,847.00
+                                                           573 LICENCIA NO REMUNERADA              .92
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  170,553.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    66,857,086 NETO:       $313,473.00               T O T A L  --->         119.08    589,720.00     276,247.00CEDULA DE CIUDADAN:    66,857,086 NETO:       $313,473.00               T O T A L  --->         119.08    589,720.00     276,247.00
+CTA : 146444914CTA : 146444914
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00038  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2019/07/02  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+16756287      TORRES VINASCO WILLIAM16756287      TORRES VINASCO WILLIAM                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           020 COMISIONES                                 300,000.00
+                                                           100 MEDIO DE TRANSPORTE                        287,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   45,125.00
+                                                           515 APORTE PENSION OBLIGATORI                                  45,125.00
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  147,664.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    16,756,287 NETO:       $860,176.00               T O T A L  --->         120.00   1098,090.00     237,914.00CEDULA DE CIUDADAN:    16,756,287 NETO:       $860,176.00               T O T A L  --->         120.00   1098,090.00     237,914.00
+CTA : 146444922CTA : 146444922
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00039  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2012/04/20  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR DE VENTAS          |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1112466263    VALENCIA GIRON MAURICIO1112466263    VALENCIA GIRON MAURICIO                                                           001 SUELDO                           120.00    414,058.00
+                                                           020 COMISIONES                                1843,645.00
+                                                           100 MEDIO DE TRANSPORTE                        287,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  106,870.00
+                                                           515 APORTE PENSION OBLIGATORI                                 106,870.00
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  438,582.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN: 1,112,466,263 NETO:      $1892,381.00               T O T A L  --->         120.00   2544,703.00     652,322.00CEDULA DE CIUDADAN: 1,112,466,263 NETO:      $1892,381.00               T O T A L  --->         120.00   2544,703.00     652,322.00
+CTA : 146444948CTA : 146444948
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00040  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : DESPACHO TALLER           Fech.Ingreso: 2015/05/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR DE VENTAS          |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+34598880      VARGAS ARBELAEZ MARIA VICTORI34598880      VARGAS ARBELAEZ MARIA VICTORI                                                           001 SUELDO                           120.00    435,000.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   34,800.00
+                                                           515 APORTE PENSION OBLIGATORI                                  34,800.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    34,598,880 NETO:       $462,432.00               T O T A L  --->         120.00    532,032.00      69,600.00CEDULA DE CIUDADAN:    34,598,880 NETO:       $462,432.00               T O T A L  --->         120.00    532,032.00      69,600.00
+CTA : 146455399CTA : 146455399
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00041  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : CONTABILIDAD              Fech.Ingreso: 2018/07/03  C.O: 001 OFICINA PRINCIPAL CA CARGO : JEFE ADMINISTRATIVA Y FINANC|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+29109280      VARGAS TAMAYO FRANCINETH29109280      VARGAS TAMAYO FRANCINETH                                                           001 SUELDO                           120.00   1750,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  140,000.00
+                                                           515 APORTE PENSION OBLIGATORI                                 140,000.00
+                                                           516 APORTE PENSION SOLIDARIDA                                  35,000.00
+                                                           598 LIBRANZA DAVIVIENDA                                       220,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    29,109,280 NETO:      $1215,000.00               T O T A L  --->         120.00   1750,000.00     535,000.00CEDULA DE CIUDADAN:    29,109,280 NETO:      $1215,000.00               T O T A L  --->         120.00   1750,000.00     535,000.00
+CTA : 146444963CTA : 146444963
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00042  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2018/03/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : AUXILIAR BODEGA OFICIOS VARI|
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+79694769      VELASCO VILLANO JOSE ALVEIRO79694769      VELASCO VILLANO JOSE ALVEIRO                                                           001 SUELDO                           120.00    496,870.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           100 MEDIO DE TRANSPORTE                        315,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   39,750.00
+                                                           515 APORTE PENSION OBLIGATORI                                  39,750.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    79,694,769 NETO:       $829,402.00               T O T A L  --->         120.00    908,902.00      79,500.00CEDULA DE CIUDADAN:    79,694,769 NETO:       $829,402.00               T O T A L  --->         120.00    908,902.00      79,500.00
+CTA : 146539101CTA : 146539101
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00043  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2018/04/23  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144072123    VERNAZA VILLANUEVA YERALDIN1144072123    VERNAZA VILLANUEVA YERALDIN                                                           001 SUELDO                           120.00    579,681.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   46,374.00
+                                                           515 APORTE PENSION OBLIGATORI                                  46,374.00
+                                                           581 INTERES PRESTAMO                                               19.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST    100,000.00                   100,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,144,072,123 NETO:       $483,946.00               T O T A L  --->                   676,713.00     192,767.00CEDULA DE CIUDADAN: 1,144,072,123 NETO:       $483,946.00               T O T A L  --->                   676,713.00     192,767.00
+CTA : 249374240CTA : 249374240
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00044  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES VENTAS X DISTR  Fech.Ingreso: 2011/05/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94381110      ZEA MEDINA HERNAN DANIEL94381110      ZEA MEDINA HERNAN DANIEL                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       97,032.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   33,125.00
+                                                           515 APORTE PENSION OBLIGATORI                                  33,125.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA CON RUT    :    94,381,110 NETO:       $444,840.00               T O T A L  --->         120.00    511,090.00      66,250.00CEDULA CON RUT    :    94,381,110 NETO:       $444,840.00               T O T A L  --->         120.00    511,090.00      66,250.00
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00045  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GERENCIA FINANCIERA       Fech.Ingreso: 2019/01/02  C.O: 001 OFICINA PRINCIPAL CA CARGO : GERENTE FINANCIERO          |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+13802803      ZEA MEDINA RAUL HUMBERTO13802803      ZEA MEDINA RAUL HUMBERTO                                                           001 SUELDO                           120.00   2525,000.00
+                                                           038 BONIFICACION X VENTAS                      200,100.00
+                                                           500 RETENCION EN LA FUENTE                                    101,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  202,000.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA CON RUT    :    13,802,803 NETO:      $2422,100.00               T O T A L  --->         120.00   2725,100.00     303,000.00CEDULA CON RUT    :    13,802,803 NETO:      $2422,100.00               T O T A L  --->         120.00   2725,100.00     303,000.00
+CTA : 166065953CTA : 166065953
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00046  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2015/08/01  C.O: 001 OFICINA PRINCIPAL CA CARGO : GERENTE GENERAL             |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94425887      ZEA MEDINA RAUL HUMBERTO94425887      ZEA MEDINA RAUL HUMBERTO                                                           001 SUELDO                           120.00   4000,000.00
+                                                           038 BONIFICACION X VENTAS                      929,000.00
+                                                           067 REINTEGRO MYOR VLR DESCON                   83,000.00
+                                                           500 RETENCION EN LA FUENTE                                    698,000.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  320,000.00
+                                                           515 APORTE PENSION OBLIGATORI                                 320,000.00
+                                                           516 APORTE PENSION SOLIDARIDA                                  80,000.00
+                                                           571 DCTO ANTICIPO SALARIAL                                    112,900.00
+                                                           581 INTERES PRESTAMO                                               16.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST  2,188,130.00                   243,126.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN:    94,425,887 NETO:      $3237,958.00               T O T A L  --->                  5012,000.00    1774,042.00CEDULA DE CIUDADAN:    94,425,887 NETO:      $3237,958.00               T O T A L  --->                  5012,000.00    1774,042.00
+CTA : 146444971CTA : 146444971
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00047  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : DESPACHO TALLER           Fech.Ingreso: 2004/01/14  C.O: 001 OFICINA PRINCIPAL CA CARGO : JEFE TALLER Y MANTENIMIENTO |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+66981836      ZEA MEDINA SANDRA BIBIANA66981836      ZEA MEDINA SANDRA BIBIANA                                                           001 SUELDO                           120.00   2169,664.00
+                                                           510 APORTE SALUD OBLIGATORIA                                  173,573.00
+                                                           515 APORTE PENSION OBLIGATORI                                 173,573.00
+                                                           516 APORTE PENSION SOLIDARIDA                                  43,393.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    66,981,836 NETO:      $1779,125.00               T O T A L  --->         120.00   2169,664.00     390,539.00CEDULA DE CIUDADAN:    66,981,836 NETO:      $1779,125.00               T O T A L  --->         120.00   2169,664.00     390,539.00
+CTA : 146444989CTA : 146444989
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00048  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : VENDEDORES DE PLANTA      Fech.Ingreso: 2018/02/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASISTENTE DE VENTAS         |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+1144137431    ZORRILLA GUTIERREZ LILIAN KAR1144137431    ZORRILLA GUTIERREZ LILIAN KAR                                                           001 SUELDO                           112.00    386,454.00
+                                                           005 AUXILIO DE TRANSPORTE                       89,621.00
+                                                           020 COMISIONES                                 613,882.00
+                                                           050 INCAPACIDAD PAGADA POR LA                   55,913.00
+                                                           051 INCAPACIDAD POR ENFERMEDA          8.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   59,623.00
+                                                           515 APORTE PENSION OBLIGATORI                                  59,623.00
+                                                           571 DCTO ANTICIPO SALARIAL                                    550,000.00
+                                                           581 INTERES PRESTAMO                                               16.00
+                                                           587 PRESTAMO CALAMIDAD DOMEST     83,332.00                    83,334.00
+                                                           589 LIBRANZA BANCO DE BOGOTA                                  200,000.00
+--------------------                                                                                    ------------- ---------------------------------                                                                                    ------------- -------------
+CEDULA DE CIUDADAN: 1,144,137,431 NETO:       $193,274.00               T O T A L  --->                  1145,870.00     952,596.00CEDULA DE CIUDADAN: 1,144,137,431 NETO:       $193,274.00               T O T A L  --->                  1145,870.00     952,596.00
+CTA : 164190068CTA : 164190068
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00049  |
+| DOCUMENTO :201908   NQ 000521 2 NQ AGOSTO                                                    FECHA(S): 20190816   AL 20190831    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : GENERALES DE OPERACION P  Fech.Ingreso: 2007/02/14  C.O: 001 OFICINA PRINCIPAL CA CARGO : SUPERVISOR DE TALLER        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+94536809      ZULUAGA RODRIGUEZ ALEXANDER94536809      ZULUAGA RODRIGUEZ ALEXANDER                                                           001 SUELDO                           120.00    579,681.00
+                                                           020 COMISIONES                                 281,534.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   73,678.00
+                                                           515 APORTE PENSION OBLIGATORI                                  73,678.00
+                                                           598 LIBRANZA DAVIVIENDA                                       143,500.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    94,536,809 NETO:       $570,359.00               T O T A L  --->         120.00    861,215.00     290,856.00CEDULA DE CIUDADAN:    94,536,809 NETO:       $570,359.00               T O T A L  --->         120.00    861,215.00     290,856.00
+CTA : 146444997CTA : 146444997

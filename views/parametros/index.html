@@ -1,0 +1,136 @@
+{{fun_ActivarDataTable()}}
+{{extend 'layout2.html'}}
+<!-- Modal -->
+{{include 'modal.html'}}
+{{=INPUT(_value=0, _id="btnusr", _name="btnusr", _hidden=True)}}
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link {{if lugar==2:}}{{='active'}}{{pass}}" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="{{if lugar==2:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Proveedores</a>
+    <a class="nav-item nav-link {{if lugar==3:}}{{='active'}}{{pass}}" id="nav-empleados-tab" data-toggle="tab" href="#nav-empleados" role="tab" aria-controls="nav-empleados" aria-selected="{{if lugar==3:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Empleados</a>
+    <a class="nav-item nav-link {{if lugar==1:}}{{='active'}}{{pass}}" id="nav-pal-tab" data-toggle="tab" href="#nav-pal" role="tab" aria-controls="nav-pal" aria-selected="{{if lugar==1:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Correo</a>
+    <a class="nav-item nav-link {{if lugar==4:}}{{='active'}}{{pass}}" id="nav-pal-tab" data-toggle="tab" href="#nav-titulos" role="tab" aria-controls="nav-titulos" aria-selected="{{if lugar==4:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Titulos</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+
+  <div class="tab-pane fade {{if lugar==1:}}{{='show active'}}{{pass}}" id="nav-pal" role="tabpanel" aria-labelledby="nav-pal-tab">
+    <div class="card bg-success">
+      <div class="card-header">
+        PARAMETROS CORREO
+      </div>
+      <div class="card-body">
+        {{=modulos}}
+        <br>
+        <DIV id="result_Server" name="result_Server"></DIV>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade {{if lugar==2:}}{{='show active'}}{{pass}}" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <DIV id="subirarchivo" name="subirarchivo">
+        <DIV class="row">
+          <div class="col-sm-6">
+            <div class="card border border-success">
+              <div class="card-header text-white bg-success">
+                SUBIR ARCHIVOS DE PROVEEDORES
+              </div>
+              <div class="card-body">
+                {{=LOAD("parametros","SubirProveedores.load",ajax=True)}}
+              </div>
+            </div>
+          </div>
+        </DIV>
+        <div class="card border border-success">
+          <div class="card-header text-white bg-success">
+            Proveedores Actuales
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              {{=registrado}}
+            </div>
+          </div>
+       </div>
+      </div>
+  </div>
+  <div class="tab-pane fade {{if lugar==3:}}{{='show active'}}{{pass}}" id="nav-empleados" role="tabpanel" aria-labelledby="nav-empleados-tab">
+        <div class="card border border-primary" style="width: 50%;">
+          <div class="card-header text-white bg-primary">
+            SUBIR ARCHIVOS DE EMPLEADOS
+          </div>
+          <div class="card-body">
+            {{=LOAD("parametros","SubirEmpleados.load",ajax=True)}}
+          </div>
+        </div>
+        <DIV class="card border border-primary">
+          <div class="card-header  text-white bg-primary">
+            Empleados Actuales
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              {{=empleados}}
+            <div>
+          </div>
+      </DIV>
+  </div>
+  <div class="tab-pane fade {{if lugar==3:}}{{='show active'}}{{pass}}" id="nav-titulos" role="tabpanel" aria-labelledby="nav-titulos-tab">
+        <div class="card border border-primary" style="width: 60%;">
+          <div class="card-header text-white bg-primary">
+            TITULOS
+          </div>
+          <div class="card-body">
+            {{=titulos}}
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var tabla_proveedores =$('#tabla_proveedores').DataTable( {
+  ajax: '{{=URL('funLstProveedores')}}',
+  deferRender: true,
+  language: {
+      search: 'Buscar:',
+      lengthMenu:'Ver _MENU_ Items',
+      paginate: {
+        first:'Inicio',
+        last:'Final',
+        next:'Proximo',
+        previous:'Anterior'
+      },
+      info:'Comprobantes: _START_ / _END_    - total Comprobantes: _TOTAL_',
+  }
+});
+
+var tabla_empleados =$('#tabla_empleados').DataTable( {
+  ajax: '{{=URL('funLstEmpleados')}}',
+  deferRender: true,
+  language: {
+      search: 'Buscar:',
+      lengthMenu:'Ver _MENU_ Items',
+      paginate: {
+        first:'Inicio',
+        last:'Final',
+        next:'Proximo',
+        previous:'Anterior'
+      },
+      info:'Comprobantes: _START_ / _END_    - total Comprobantes: _TOTAL_',
+  }
+});
+
+</script>
+
+
+
+
+
+
+{{block page_js}}
+<script type="text/javascript">
+  function fun_llamar(){
+    $('#DialModal').modal('show');
+    ajax('{{=URL("AddCorreo")}}',['usuario'],':eval');
+    };
+  </script>
+{{end page_js}}

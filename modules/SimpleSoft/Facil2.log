@@ -1,0 +1,15 @@
+2019-08-21 13:46:55,870 - __main__ - F2S_Campos - DEBUG - Procesar:/home/marco/Clientes/niko_celis/inst-sanignacion-oyola/trabajo/spools/muestra_correo.csv
+2019-08-21 13:46:55,870 - __main__ - F2S_Campos - DEBUG - SaltoLoinea: 1
+2019-08-21 13:46:55,870 - SimpleSoft.F2S_PagLogicas - F2S_PagLogicas - INFO - Inicio
+2019-08-21 13:46:55,872 - __main__ - F2S_Campos - DEBUG - Saltar linea al inicio
+2019-08-21 13:46:55,872 - __main__ - F2S_Campos - DEBUG - EliminarCRLF
+2019-08-21 13:46:55,873 - __main__ - F2S_Campos - DEBUG - ExtraerPrefijo: [0], 
+2019-08-21 13:46:55,873 - __main__ - F2S_Campos - DEBUG - Valor agrupar:1033796911, Anterior 1033796911
+2019-08-21 13:46:55,873 - __main__ - F2S_Campos - DEBUG - Estraer PDF
+2019-08-21 13:47:35,159 - __main__ - F2S_Campos - DEBUG - Procesar:/home/marco/Clientes/niko_celis/inst-sanignacion-oyola/trabajo/spools/muestra_correo.csv
+2019-08-21 13:47:35,160 - __main__ - F2S_Campos - DEBUG - SaltoLoinea: 1
+2019-08-21 13:47:35,161 - __main__ - F2S_Campos - DEBUG - Saltar linea al inicio
+2019-08-21 13:47:35,161 - __main__ - F2S_Campos - DEBUG - EliminarCRLF
+2019-08-21 13:47:35,161 - __main__ - F2S_Campos - DEBUG - ExtraerPrefijo: [0], 
+2019-08-21 13:47:35,161 - __main__ - F2S_Campos - DEBUG - Valor agrupar:1033796911, Anterior 1033796911
+2019-08-21 13:47:35,161 - __main__ - F2S_Campos - DEBUG - Estraer PDF

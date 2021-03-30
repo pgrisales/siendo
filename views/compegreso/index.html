@@ -1,0 +1,212 @@
+{{
+   response.files.append(URL('static','js/jquery.dataTables.js'))
+   response.files.append(URL('static','css/jquery.dataTables.min.css'))
+}}
+{{extend 'layout2.html'}}
+{{block head}}
+ <script src="{{=URL('static','js/pdf/pdfobject.min.js')}}"></script>
+{{end}}
+{{include 'modal.html'}}
+
+{{=INPUT(_value=0, _id="btnusr", _name="btnusr", _hidden=True)}}
+
+<!-- Modal -->
+<div class="modal fade"  name="cmbMail" id="cmbMail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar Correo</h5>
+        <div id="nombrempresa" name=="nombrempresa"></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Direccion de Correo</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">To: @</div>
+            </div>
+            <input type="email" class="form-control" id="correo1"  name ="correo1" placeholder="Direccion de Correo">
+          </div>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Direccion de Correo</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">CC: @</div>
+            </div>
+            <input type="email"  class="form-control" id="correo2"  name ="correo2" placeholder="Direccion de Correo">
+          </div>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Direccion de Correo</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">CC: @</div>
+            </div>
+            <input type="email"  class="form-control" id="correo3"  name ="correo3" placeholder="Direccion de Correo">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        {{=BtnGuardar}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-xl" name="visorPDF" id="visorPDF" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div id="viewpdf" name="viewpdf">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card border border-primary">
+  <div class="card-header bg-primary"><center><h4>{{=modulos.descripcion.upper()}}</h4></center></div>
+  <div class="card-body">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-pal-tab" data-toggle="tab" href="#nav-pal" role="tab" aria-controls="nav-pal" aria-selected="true">Envio Archivo</a>
+        <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Sin Coreo</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Para enviar</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Enviados</a>
+      </div>
+    </nav>
+    <div class="tab-content border border-default" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="nav-pal" role="tabpanel" aria-labelledby="nav-pal-tab">
+          <div class="card border border-success">
+            <div class="card-header bg-success">Subir Archivos</div>
+            <div class="card-body ">
+                {{=formulario}}
+                <div id="progreso" name="progreso">
+                </div>
+                <div id="msgerror">
+                  {{if "msgerror" in globals():}}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{=msgerror}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {{pass}}
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <DIV id="estadopendiente" name="estadopendiente">
+          {{if len(pendientes)>0:}}
+            {{=pendientes}}
+          {{pass}}
+         </DIV>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <DIV id="envios" name="envios">
+          {{if len(envios)>0:}}
+            {{=envios}}
+            {{=INPUT(_type="checkbox", _id="select_todos", _name="select_todos",value=True)}} Seleccionar Todos
+
+
+          {{pass}}
+         </DIV>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        {{=form_enviados}}
+
+        <div id="resultenviados" name="resultenviados"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  var tabla_sincoreo = $('#tabla_sincorreo').DataTable( {
+    language: {
+        search: 'Buscar:',
+        lengthMenu:'Ver _MENU_ Items',
+        paginate: {
+          first:'Inicio',
+          last:'Final',
+          next:'Proximo',
+          previous:'Anterior'
+        },
+        info:'Comprobantes: _START_ / _END_    - total Comprobantes: _TOTAL_',
+    }
+  });
+  var tabla_pendiente =$('#tabla_pendiente').DataTable( {
+    language: {
+        search: 'Buscar:',
+        lengthMenu:'Ver _MENU_ Items',
+        paginate: {
+          first:'Inicio',
+          last:'Final',
+          next:'Proximo',
+          previous:'Anterior'
+        },
+    info:'Comprobantes: _START_ / _END_    - total Comprobantes: _TOTAL_',
+  },
+    columnDefs: [ {
+               orderable: false,
+               className: 'select-checkbox',
+               targets:   0,
+               checkboxes: {selectRow: true}
+           }
+            ],
+    select: {
+               style:    'os',
+               selector: 'td:first-child'
+           },
+    order: [[ 1, 'asc' ]]
+  });
+</script>
+
+{{block page_js}}
+<script type="text/javascript">
+  {{if tarea>0:}}
+    var subircontrol=0;
+
+    function Detener(){
+      clearInterval(subircontrol);
+      alert('Proceso finalizado');
+      window.location='{{=URL("index")}}';
+    };
+
+    subircontrol = setInterval(function(){
+                      ajax('{{=URL('estadosubir',vars=dict(tarea=tarea))}}',['usrid'],':eval');
+                    }, 2000);
+
+  {{pass}}
+
+
+
+
+  $("#select_todos").click(function(){
+      $("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+  });
+
+  var viewer=$('#viewpdf');
+  {{if tarea==0:}}
+    var visor=0;
+  {{else:}}
+    visor=0;
+    //visor = setInterval(estadosubida(), 3000);
+  {{pass}}
+
+  function instertarmail(usuario, nombre){
+    $("#nombrempresa").html(nombre);
+    $('#btnusr').val(usuario);
+    $('#cmbMail').modal('show');
+  };
+
+
+</script>
+{{end page_js}}

@@ -1,0 +1,16 @@
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00001  |
+| DOCUMENTO :201908   LV 000081 LIQ VAC COMPENSADAS                                            FECHA(S): 20190801   AL 20190815    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : SERVICIOS GENERALES       Fech.Ingreso: 2004/10/13  C.O: 001 OFICINA PRINCIPAL CA CARGO : OFICIOS VARIOS              |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+66857086      TOBAR MOSQUERA FERNANDA66857086      TOBAR MOSQUERA FERNANDA                                                           033 VACACIONES COMPENSADAS                     331,246.00
+
+
+
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:    66,857,086 NETO:       $331,246.00               T O T A L  --->                   331,246.00CEDULA DE CIUDADAN:    66,857,086 NETO:       $331,246.00               T O T A L  --->                   331,246.00
+CTA : 146444914CTA : 146444914

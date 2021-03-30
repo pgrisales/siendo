@@ -1,0 +1,23 @@
+
+====================================================================================================================================
+| EMPRESA   :MAQUITODO S.A.S                                    C.O.: *** Todos                                    Pagina:  00001  |
+| DOCUMENTO :201907   LC 000173 LIQ CONTRATO ALEXANDER CASTILL                                 FECHA(S): 20190701   AL 20190715    |
+| FORMA PAGO: Todos                                                                                                                |
+| CCOSTO   : REPRESENTANTE DE VENTAS   Fech.Ingreso: 2013/08/16  C.O: 001 OFICINA PRINCIPAL CA CARGO : ASESORES COMERCIALES        |
+------------------------------------------------------------------------------------------------------------------------------------
+CODIGO    N O M B R E                           B A S E   CPTO DESCRIPCION                     CAN/SALDO   DEVENGO        DEDUCCION
+------------------------------------------------------------------------------------------------------------------------------------
+6389194       CASTILLO OSORIO ALEXANDER6389194       CASTILLO OSORIO ALEXANDER                                                           001 SUELDO                           120.00    414,058.00
+                                                           005 AUXILIO DE TRANSPORTE                       48,516.00
+                                                           020 COMISIONES                                 839,658.00
+                                                           030 CESANTIAS                                 1011,188.00
+                                                           031 INTERESES SOBRE CESANTIAS                   65,727.00
+                                                           032 PRIMA DE SERVICIOS                         108,519.00
+                                                           035 VACACIONES                                 717,022.00
+                                                           510 APORTE SALUD OBLIGATORIA                                   50,149.00
+                                                           515 APORTE PENSION OBLIGATORI                                  50,149.00
+                                                           571 DCTO ANTICIPO SALARIAL                                    256,500.00
+                                                           611 SEGURO SURAMERICANA                                        31,227.00
+--------------------                                                                     -------------- ------------- ---------------------------------                                                                     -------------- ------------- -------------
+CEDULA DE CIUDADAN:     6,389,194 NETO:      $2816,663.00               T O T A L  --->         120.00   3204,688.00     388,025.00CEDULA DE CIUDADAN:     6,389,194 NETO:      $2816,663.00               T O T A L  --->         120.00   3204,688.00     388,025.00
+CTA : 158512129CTA : 158512129

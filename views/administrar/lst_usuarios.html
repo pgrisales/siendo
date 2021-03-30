@@ -1,0 +1,84 @@
+{{fun_ActivarDataTable()  }}
+{{extend 'layout2.html'}}
+{{=A("Regresar",_href=URL("index"),_class="btn btn-success text-white")}}
+<br>
+<DIV class="row">
+  <DIV class="col-md-6">
+    <div class="card border border-primary">
+      <div class="card-header  bg-primary">
+        <div class="row">
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            <i class="fas fa-users fa-3x text-white"></i>&nbsp; &nbsp; &nbsp;
+            <h4 class="text-white">Usuarios Registrados en: <B>{{=nombregrupo.role}}</B></h4>
+        </div>
+      </div>
+      <div class="card-body">
+        {{=formulario}}
+      </div>
+    </div>
+  </DIV>
+  <DIV class="col-md-6">
+    <div class="card border border-success">
+      <div class="card-header bg-success">
+        <div class="row align-middle">
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+          <i class="fas fa-user fa-3x text-white"></i>&nbsp; &nbsp; &nbsp;
+          <h4 class="text-white">Lista de Usuarios</h4>
+        </div>
+      </div>
+      <div class="card-body table-responsive">
+        {{=usuarios_reg}}
+        <br>
+        <br>
+      </div>
+    </div>
+  </DIV>
+</DIV>
+
+<script type="text/javascript">
+var tabla_usuarios =$('#tabla_usuarios').DataTable( {
+  language: {
+      search: 'Buscar:',
+      lengthMenu:'Ver _MENU_ Items',
+      paginate: {
+        first:'Inicio',
+        last:'Final',
+        next:'Proximo',
+        previous:'Anterior'
+      },
+      info:'Usuarios: _START_ / _END_    - Total Usuarios: _TOTAL_',
+    },
+    columnDefs: [ {
+               orderable: false,
+               className: 'select-checkbox',
+               targets:   0,
+               checkboxes: {selectRow: true}
+           }
+            ],
+    select: {
+               style:    'os',
+               selector: 'td:first-child'
+           },
+  order: [[ 1, 'asc' ]]
+});
+var tabla_grupo=$('#tabla_grupo').DataTable( {
+  language: {
+      search: 'Buscar:',
+      lengthMenu:'Ver _MENU_ Items',
+      paginate: {
+        first:'Inicio',
+        last:'Final',
+        next:'Proximo',
+        previous:'Anterior'
+      },
+      info:'Usuarios: _START_ / _END_    - Total Usuarios: _TOTAL_',
+    },
+    columnDefs: [ {
+               orderable: false,
+               targets:   1,
+           }
+            ],
+  order: [[ 0, 'asc' ]]
+});
+
+</script>

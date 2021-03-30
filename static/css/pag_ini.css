@@ -1,0 +1,5 @@
+body {
+      background: no-repeat center/100% url(../images/img-10345.jpg); /* 50% 100% no-repeat;*/
+}
+/* Toolbar */
+#toolbar { text-shadow: 0 1px 0 rgba(253,253,255,0.6); }

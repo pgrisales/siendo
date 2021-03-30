@@ -1,0 +1,12 @@
+[Unit]
+Description=Control de Actividades Siendo
+After=network.target
+ 
+[Service]
+Type=simple
+User=root
+Restart=always
+ExecStart=/home/www-data/web2py/web2py.py -MS siendo  -R /home/www-data/web2py/applications/siendo/modules/ControlMaestro.py
+
+[Install]
+WantedBy=multi-user.target

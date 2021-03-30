@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Siendo</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+    <link href="{{=URL('static','assets/plugins/jquery-ui/jquery-ui.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/plugins/animate/animate.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/css/default/style.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/css/default/style-responsive.min.css')}}" rel="stylesheet" />
+    <link href="{{=URL('static','assets/css/default/theme/default.css')}}" rel="stylesheet" id="theme" />
+
+   <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{{=URL('static','assets/plugins/pace/pace.min.js')}}"></script>
+    <!-- ================== END BASE JS ================== -->
+</head>
+<body class="pace-top bg-white">
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin login -->
+        <div class="login login-with-news-feed">
+            <!-- begin news-feed -->
+            <div class="news-feed">
+                <div class="news-image" style="background-image: url({{=URL('static','assets/img/login-bg/login-bg-11.png')}}"></div>
+            </div>
+            <!-- end news-feed -->
+            <!-- begin right-content -->
+            <div class="right-content">
+                <!-- begin login-header -->
+                <div class="login-header">
+                    <div class="brand">
+                            <center>{{=IMG(_src=URL('static','images/siendo.png'),_alt='Siendo')}}</center>
+                    </div>
+                </div>
+                <!-- end login-header -->
+                <!-- begin login-content -->
+                <div class="login-content">
+                    {{=form.custom.begin}}
+                        <div class="form-group m-b-15">
+                            {{=LABEL("Usuario")}}
+                            {{=form.custom.widget.username}}
+                            <!-- <input type="text" class="form-control form-control-lg" placeholder="Usuario" required />-->
+                        </div>
+                        <div class="form-group m-b-15">
+                            {{=LABEL("Clave")}}
+                            {{=form.custom.widget.password}}
+                            <!-- <input type="password" class="form-control form-control-lg" placeholder="Clave" required />-->
+                        </div>
+                        <div class="login-buttons">
+                            {{=form.custom.submit}}
+                            <!-- <button type="submit" class="btn btn-success btn-block btn-lg">Ingreso</button> -->
+                        </div>
+                        <hr />
+                    {{=form.custom.end}}
+                </div>
+                <div class="brand">
+                		<center>Todos los derechos reservados Solucion en linea©</center>
+                		<br>
+                        <center>{{=IMG(_src=URL('static','images/logo.png'),_alt='MaquiTodo')}}</center>
+                </div>
+
+                <!-- end login-content -->
+            </div>
+            <!-- end right-container -->
+        </div>
+        <!-- end login -->
+
+
+    </div>
+    <!-- end page container -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{{=URL('static','assets/plugins/jquery/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{=URL('static','assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <script src="{{=URL('static','assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js')}}"></script>
+    <!--[if lt IE 9]>
+        <script src="{{=URL('static','assets/crossbrowserjs/html5shiv.js')}}"></script>
+        <script src="{{=URL('static','assets/crossbrowserjs/respond.min.js')}}"></script>
+        <script src="{{=URL('static','assets/crossbrowserjs/excanvas.min.js')}}"></script>
+    <![endif]-->
+    <script src="{{=URL('static','assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{=URL('static','assets/plugins/js-cookie/js.cookie.js')}}"></script>
+    <script src="{{=URL('static','assets/js/theme/default.min.js')}}"></script>
+    <script src="{{=URL('static','assets/js/apps.min.js')}}"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+</body>
+</html>

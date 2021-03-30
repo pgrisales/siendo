@@ -1,0 +1,43 @@
+{{
+   response.files.append(URL('static','js/jquery.dataTables.js'))
+   response.files.append(URL('static','css/jquery.dataTables.min.css'))
+}}
+{{extend 'layout2.html'}}
+
+
+<table id="example" style="width:100%" class="table">
+  <thead>
+      <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>tipodoc</th>
+          <th>nit</th>
+          <th>correo1</th>
+          <th>correo2</th>
+          <th>correo3</th>
+      </tr>
+  </thead>
+  <tfoot>
+      <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>tipodoc</th>
+        <th>nit</th>
+        <th>correo1</th>
+        <th>correo2</th>
+        <th>correo3</th>
+      </tr>
+  </tfoot>
+</table>
+
+<script type="text/javascript">
+
+function tablones () {
+    $('#example').DataTable( {
+        "ajax": "{{=URL('lectura')}}",
+        //"deferRender": true
+        "serverSide": true,
+    } );
+  };
+tablones();
+</script>

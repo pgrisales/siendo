@@ -1,0 +1,7 @@
+.sidebar .nav{
+border-radius: 0px 29px 0px 24px;
+-moz-border-radius: 0px 29px 0px 24px;
+-webkit-border-radius: 0px 29px 0px 24px;
+border: 9px solid #000000;
+background-color: #2372c2;
+}

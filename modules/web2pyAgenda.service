@@ -1,0 +1,12 @@
+[Unit]
+Description=Agenda de Web2py
+After=network.target
+ 
+[Service]
+Type=simple
+User=root
+Restart=always
+ExecStart=python3 /home/www-data/web2py/web2py.py -K siendo 
+
+[Install]
+WantedBy=multi-user.target
