@@ -1,0 +1,14 @@
+.scrollable0panel{
+    max-height: 550px;
+    overflow: auto;
+}
+
+.altopanel{
+    max-height: 500px;
+}
+
+
+.scrollable1panel{
+    max-height: 300px;
+    overflow: auto;
+}

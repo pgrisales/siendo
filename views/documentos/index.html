@@ -1,0 +1,35 @@
+{{extend 'layout2.html'}}
+{{block head}}
+ <script src="{{=URL('static','js/pdf/pdfobject.min.js')}}"></script>
+{{end}}
+
+<div class="modal fade bd-example-modal-xl" name="visorPDF" id="visorPDF" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div id="viewpdf" name="viewpdf">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    <b>Filtro</b>
+  </div>
+  <div class="card-body">
+    {{=buscador}}
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header bg-info text-white">
+    <b>Documentos Encontrados</b>
+  </div>
+  <div class="card-body">
+    <div name= "resultado" id="resultado">
+    {{=formulario}}
+    </div>
+
+  </div>
+</div>
