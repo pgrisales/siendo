@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 class ObjFilas():
 	"""Manejo de Campos"""
 	def __init__(self, facil, rutarecursos, borrartemp=False ):
-		print ("Print ObjFilas.inicio")
+		#print ("Print ObjFilas.inicio")
 		self.Facil = facil
 		self.rutarecursos  = rutarecursos
 		self.nombrepdf =[]
@@ -255,7 +255,7 @@ class ObjFilas():
 								nolineablanco=self.Facil.getNoLineaBlanco(),
 								eliminartexto=self.Facil.getElinarTexto(),
 								iniciopag    =self.Facil.getIniciopag(),
-
+                                ln_posicion  =self.Facil.getPosDetalle()
 							)
 		o_partir.Procesar()
 

@@ -133,7 +133,7 @@ class ObjFacil():
         #leer ambiente
         self.AbrirAmbiente(ambiente)
         #procesar paginas
-        for pag in range(pagina, obPaginas.paginas+1):
+        for pag in range(pagina, obPaginas.paginas):
             lineas=obPaginas.LeerPagina(pag)
             cambio_salto=False
 

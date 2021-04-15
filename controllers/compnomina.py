@@ -37,7 +37,7 @@ def index():
         response.flash = 'formulario aceptado'
         if Verificar(formulario.vars.archivo):
             tarea=db.tbl_control_maestro.insert(
-                descripcion="Subir Archvo de Nomina",
+                descripcion="Subir Archivo de Nomina",
                 funcion="Crear Pdf",
                 args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':2," + "}",
                 estado= 'I')

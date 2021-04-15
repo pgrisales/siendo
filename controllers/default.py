@@ -9,29 +9,6 @@
 # -------------------------------------------------------------------------
 #sicodes
 # SIstema COntrol de DESpacho
-@auth.requires_login()
-
-def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    if auth.has_membership(0,auth.user_id, "Separadores"):
-       redirect (URL("separadores","index"))
-
-    if auth.has_membership(0,auth.user_id, "Empacadores"):
-        redirect (URL("empacadores","index"))
-
-    if auth.has_membership(0,auth.user_id, "Transportadores"):
-        redirect (URL("transportadores","index"))
-
-
-    response.flash = T("Bienvenidos")
-    return dict(message=T('Sistema de Control de Documentos'))
-
 
 @auth.requires_login()
 def lst_usr():
@@ -104,9 +81,6 @@ def prueba():
     from gluon.tools import Expose
     return dict(archivos=Expose('/home/www-data/',extensions=['.pdf']))
 
-
-
-
 def Mensajes():
     if not auth.user:return ("")
     salida=""
@@ -121,6 +95,99 @@ def Mensajes():
         mensajes.append(LI (f"Mensajes ({len(consulta)})", _class="dropdown-header"))
     return salida
 
-def panelcontrol():
-    consulta=(db.tbl_modulo.id>0).select(cacheable=True)
-    return consulta
+def FunTabla(estadoc,estadoe):
+
+
+
+    tabla=TABLE(_class='table')
+    tabla.append(TBODY(
+                        TR(TD('Pendientes:'),TD(SPAN(estadoc+estadoe, _class='badge badge-soft-success mr-2'), _class='font-weight-bold text-right')),
+                        TR(TD('Sin Correo:'),TD(estadoc, _class='text-right')),
+                        TR(TD('Por enviar:'),TD(estadoe, _class='text-right')),
+                    ))
+    return tabla
+
+def FunTitulo(titulo,color='bg-danger',campana=True):
+    if campana:
+        salida =DIV(I(_class="fas fa-bell fa-2x m-4 fa-border fa-pull-left"),titulo, _class='card-header text-white {}'.format(color))
+    else:
+        salida =DIV(I(_class="fas fa-lightbulb fa-2x m-4 fa-border fa-pull-left"),titulo, _class='card-header text-white {}'.format(color))
+    return salida
+
+
+
+@auth.requires_login()
+def index():
+    if  ( not auth.has_membership("Super")
+            and not auth.has_membership("Administradores")
+            and not auth.has_membership("Gerencia")
+            and not auth.has_membership("Empleados")
+            and not auth.has_membership("Proveedor")): redirect(URL('documentos','index'))
+
+    consulta=db.tbl_modulo.id>0
+    modulos=[salida ['id'] for salida in db(consulta).select(db.tbl_modulo.id, cacheable=True).as_list()]
+    consulta &=db.tbl_recepcion.tipdoc==db.tbl_modulo.id
+    consulta &= (db.tbl_recepcion.estado=='C')|(db.tbl_recepcion.estado=='E')
+    contar=db.tbl_recepcion.id.count()
+
+    formulario=[]
+    consulta=db(consulta).select(contar,
+                                 db.tbl_recepcion.tipdoc,
+                                 db.tbl_recepcion.estado,
+                                 groupby = db.tbl_recepcion.tipdoc|db.tbl_recepcion.estado,
+                                 orderby =db.tbl_recepcion.tipdoc|db.tbl_recepcion.estado,
+                                 cacheable=True)
+    if consulta:
+        estadoc=0
+        estadoe=0
+        titulo=''
+        id_recepcion=None
+        for item in consulta:
+            if id_recepcion==None:
+                id_recepcion=item.tbl_recepcion.tipdoc
+                if id_recepcion in modulos: modulos.remove((id_recepcion))
+
+            if item.tbl_recepcion.tipdoc==id_recepcion:
+                titulo=FunTitulo(item.tbl_recepcion.tipdoc.descripcion,'bg-danger')
+
+                if item.tbl_recepcion.estado=='C':
+                    estadoc=item[contar]
+                else:
+                    estadoe=item[contar]
+            else:
+                cuerpo=DIV(_class='card-body')
+                cuerpo.append(FunTabla(estadoc,estadoe))
+                formulario.append(DIV(titulo,cuerpo, _class='card m-5'))
+                estadoc=0
+                estadoe=0
+                if id_recepcion in modulos: modulos.remove(id_recepcion)
+                id_recepcion=item.tbl_recepcion.tipdoc
+
+                titulo=FunTitulo(item.tbl_recepcion.tipdoc.descripcion,'bg-danger')
+                if item.tbl_recepcion.estado=='C':
+                    estadoc=item[contar]
+                else:
+                    estadoe=item[contar]
+        if id_recepcion in modulos: modulos.remove(id_recepcion)
+        cuerpo=DIV(_class='card-body')
+        cuerpo.append(FunTabla(estadoc,estadoe))
+        formulario.append(DIV(titulo,cuerpo, _class='card m-5'))
+    #Sin pendientes
+    consulta=db(db.tbl_modulo.id.belongs(modulos)).select(db.tbl_modulo.descripcion, cacheable=True)
+    for item in consulta:
+        titulo=FunTitulo(item.descripcion, 'bg-primary', False)
+        cuerpo=DIV(_class='card-body')
+        cuerpo.append(FunTabla(0,0))
+        formulario.append(DIV(titulo,cuerpo, _class='card m-5'))
+
+    return dict(formulario=formulario, consulta=modulos)
+
+
+
+
+
+@auth.requires_login()
+def index_old():
+
+    response.flash = T("Bienvenidos")
+    return dict(message=T('Sistema de Control de Documentos'))

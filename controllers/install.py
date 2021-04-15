@@ -42,7 +42,7 @@ def crearadmin():
         db.auth_user.insert (first_name="Super",
                              last_name="SimpleSoft",
                              username="super",
-                             password=str(CRYPT(salt=True)('Terero.2017')[0])
+                             password=str(CRYPT(salt=True)('Terero.2021')[0])
                              )
         db.auth_user.insert (first_name="Administrador",
                              last_name="Sistema",

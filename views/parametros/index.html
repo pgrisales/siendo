@@ -7,14 +7,13 @@
 
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link {{if lugar==2:}}{{='active'}}{{pass}}" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="{{if lugar==2:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Proveedores</a>
-    <a class="nav-item nav-link {{if lugar==3:}}{{='active'}}{{pass}}" id="nav-empleados-tab" data-toggle="tab" href="#nav-empleados" role="tab" aria-controls="nav-empleados" aria-selected="{{if lugar==3:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Empleados</a>
-    <a class="nav-item nav-link {{if lugar==1:}}{{='active'}}{{pass}}" id="nav-pal-tab" data-toggle="tab" href="#nav-pal" role="tab" aria-controls="nav-pal" aria-selected="{{if lugar==1:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Correo</a>
-    <a class="nav-item nav-link {{if lugar==4:}}{{='active'}}{{pass}}" id="nav-pal-tab" data-toggle="tab" href="#nav-titulos" role="tab" aria-controls="nav-titulos" aria-selected="{{if lugar==4:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Titulos</a>
+    <a class="nav-item nav-link {{if lugar==2:}}{{='active'}}{{pass}}" data-toggle="tab" role="tab" id="nav-home-tab"  href="#nav-home" aria-controls="nav-home" aria-selected="{{if lugar==2:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Proveedores</a>
+    <a class="nav-item nav-link {{if lugar==3:}}{{='active'}}{{pass}}" data-toggle="tab" role="tab" id="nav-empleados-tab"  href="#nav-empleados" aria-controls="nav-empleados" aria-selected="{{if lugar==3:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Empleados</a>
+    <a class="nav-item nav-link {{if lugar==1:}}{{='active'}}{{pass}}" data-toggle="tab" role="tab" id="nav-pal-tab"  href="#nav-pal" aria-controls="nav-pal" aria-selected="{{if lugar==1:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Correo</a>
+    <a class="nav-item nav-link {{if lugar==4:}}{{='active'}}{{pass}}" data-toggle="tab" role="tab" id="nav-titulos-tab"  href="#nav-titulos" aria-controls="nav-titulos" aria-selected="{{if lugar==4:}}{{='true'}}{{else:}}{{='false'}}{{pass}}">Titulos</a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-
   <div class="tab-pane fade {{if lugar==1:}}{{='show active'}}{{pass}}" id="nav-pal" role="tabpanel" aria-labelledby="nav-pal-tab">
     <div class="card bg-success">
       <div class="card-header">
@@ -62,26 +61,28 @@
             {{=LOAD("parametros","SubirEmpleados.load",ajax=True)}}
           </div>
         </div>
-        <DIV class="card border border-primary">
+        <div class="card border border-primary">
           <div class="card-header  text-white bg-primary">
             Empleados Actuales
           </div>
           <div class="card-body">
             <div class="table-responsive">
               {{=empleados}}
-            <div>
-          </div>
-      </DIV>
-  </div>
-  <div class="tab-pane fade {{if lugar==3:}}{{='show active'}}{{pass}}" id="nav-titulos" role="tabpanel" aria-labelledby="nav-titulos-tab">
-        <div class="card border border-primary" style="width: 60%;">
-          <div class="card-header text-white bg-primary">
-            TITULOS
-          </div>
-          <div class="card-body">
-            {{=titulos}}
+            </div>
           </div>
         </div>
+  </div>
+  <div class="tab-pane fade {{if lugar==3:}}{{='show active'}}{{pass}}" id="nav-titulos" role="tabpanel" aria-labelledby="nav-titulos-tab">
+    <div class="card border border-primary">
+      <div class="card-header  text-white bg-primary">
+        CONFIGURACION TITULOS
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          {{=titulos}}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -24,3 +24,5 @@ if not configuration.get('app.production'):
         (T('Estado de Cartera de Clientes'),"fas fa-wallet", URL('compegreso', 'index')),
         #(T('Subir Clientes excel'), False, URL('subirplano', 'index')),
     ]
+    if auth.has_membership("Super"):
+        (T('General'), "fas fa-radiation-alt", URL('controles', 'index')),

@@ -94,6 +94,15 @@ class ObjFacil():
             salida="Z"
         return
 
+    def getPosDetalle(self):
+        '''
+        Posicion en lineas inicio del detalle por defecto es 50 si no se especifica.
+        '''
+        salida = self.getEncabezado("posdetalle")
+        if salida=="":
+            salida=50
+        return salida
+
     def getTipos(self):
         '''
         Buscar el registro los tipos de letras
@@ -245,7 +254,7 @@ class ObjFacil():
         #print (selector)
         if "fun_formato" in selector:
             texto=selector["fun_formato"].format(texto.strip())
-            print (texto)
+            #print (texto)
 
         if "codigo128" in selector:
             self.pagina[ selector["nombre"] ]= {

@@ -19,15 +19,39 @@ def index():
     empleados=TABLE(THEAD(TR(TH("Cedula"),TH("Nombre Empleado"), TH("Correo Envio"),TH("Control",_align="right"))),
                     _class="table table-striped table-bordered", _id="tabla_empleados", _style="width: 100%;")
 
-    titulos=SQLFORM.grid(db.tbl_modulo,
-                        csv=False,
-                        create=False,
-                        details=False,
-                        deletable=False,
-                        maxtextlength=80,
-                        fields=[db.tbl_modulo.descripcion,db.tbl_modulo.ambiente],
-                        )
+    titulos=Fun_Titulos()
     return dict(registrado=registrado, empleados=empleados,modulos=modulos,lugar=lugar,titulos=titulos)
+
+@auth.requires(lambda: auth.has_membership('Administradores') or auth.has_membership ('Super') )
+def Fun_Titulos():
+
+    salida =DIV()
+    campos=[db.tbl_modulo.id, db.tbl_modulo.descripcion]
+    titulos=TR(TH('Descripción'))
+    if auth.has_membership ('Super'):
+        campos.append(db.tbl_modulo.ambiente)
+        campos.append(db.tbl_modulo.carpeta)
+        titulos.append(TH('Ambiente'))
+        titulos.append(TH('Carpeta'))
+    titulos=THEAD(titulos)
+    cuerpo=TBODY()
+    consulta=db(db.tbl_modulo.id>0).select(*campos)
+    for item in consulta:
+        linea=TR(TD(item.descripcion))
+        if auth.has_membership ('Super'):
+            linea.append(TD(item.ambiente))
+            linea.append(TD(item.carpeta))
+
+        temp="ajax('{}',['id'],':eval');".format (URL('ajaxEditarTitulo', vars= dict(titulo=item.id)))
+        linea.append(A('Editar', _onclick=temp, _class='btn btn-primary text-white'))
+        cuerpo.append(linea)
+    salida.append(TABLE(titulos, cuerpo, _class='table table-bordered'))
+    return salida
+
+def ajaxEditarTitulo():
+    id_parametro=request.vars.titulo
+    return "alert('{}');".format (id_parametro)
+
 
 
 @auth.requires(lambda: auth.has_membership('Administradores') or auth.has_membership ('Super') )
@@ -420,6 +444,7 @@ def formServer():
 # ajax desde formServer()
 def GuardarServerCorreo():
     id_server=request.vars.id_server or None
+    if id_server==None:        return('alert("Error grave idSever")')
     servidor_correo=request.vars.servidor_correo
     puerto=request.vars.puerto
     tls=request.vars.tls
@@ -430,7 +455,6 @@ def GuardarServerCorreo():
     asunto=request.vars.asunto
     cuerpohtml=request.vars.cuerpohtml
     cuerpo=request.vars.cuerpo
-    if id_server==None:        return('alert("Error grave idSever")')
     consulta=db(db.tbl_parametros.id==id_server).select().first()
     if consulta:
         consulta.servidor_correo=servidor_correo
@@ -477,7 +501,6 @@ def SubirProveedores():
         novedad=SubirPlano(archivo, True, modulo=1)
         redirect(URL("index.html",vars=dict(lugar=2)))
     return dict(subir_formulario=subir_formulario)
-
 
 #ajax
 def funLstProveedores():

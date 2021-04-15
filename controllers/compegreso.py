@@ -64,7 +64,12 @@ def Verificar(archivo):
     arch.close()
     salida=False
     datos=datos.decode("latin-1")
-    if datos.find("|COMPROBANTES DE EGRESOS|")>-1:salida=True
+    
+    control=['|    PAGO ELECTRONICO   |', "|COMPROBANTES DE EGRESOS|"]
+
+    for item in control:
+        if datos.find(item)>-1:salida=True
+
     return salida
 
 #ajax

@@ -1,6 +1,8 @@
 {{
+   response.files.insert(1,URL('static','css/f2s_scroll.css'))
    response.files.append(URL('static','js/jquery.dataTables.js'))
    response.files.append(URL('static','css/jquery.dataTables.min.css'))
+
 }}
 {{extend 'layout2.html'}}
 {{block head}}

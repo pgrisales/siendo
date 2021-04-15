@@ -15,7 +15,7 @@ import pickle
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LAParams, LTTextBox, LTTextLine
+from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTTextBoxHorizontal
 #from Facil import ObjFacil
 
 import logging
@@ -25,26 +25,36 @@ logger = logging.getLogger(__name__)
 
 class ObjPDF():
     """docstring for ObjPDF"""
-    def __init__(self, archpdf, selector, ruta_recursos):
+    def __init__(self, archpdf, ambiente, ruta_recursos):
         self.error=None
         self.ruta=ruta_recursos
         self.doc = PDFDocument()
-
-        logger.debug (f"Procesar:{archpdf} {selector}")
+        self.ambiente=ambiente
+        self.debug=True
+        #logger.debug (f"Procesar:{archpdf} {selector}")
         if  op.isfile (archpdf):
             print ("Existe archivo de datos")
             fp = open(archpdf, 'rb')
             parser = PDFParser(fp)
             parser.set_document(self.doc)
-
-
             self.doc.set_parser(parser)
             self.doc.initialize('')
         else:
             self.error="No existe Archivo:[{}]".format(archpdf)
 
-        self.selectores = selector
+    def BorrarBasura(self, texto):
+        salida =''
+        for letra in texto:
+            #print (letra.encode('utf-8'))
+            if len(letra.encode('utf-8'))==1:
+                salida +=letra
+        return salida
 
+        for item in self.ambiente['borrar']:
+            print ("replace:",item)
+            texto = texto.replace(item.encode('utf-8'), '')
+        print (texto.encode('utf-8'))
+        return texto
 
     def VistaPdf(self):
         rsrcmgr = PDFResourceManager()
@@ -63,18 +73,38 @@ class ObjPDF():
             layout = device.get_result()
             for lt_obj in layout:
                 if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                    texto=lt_obj.get_text()
-                    if self.debug: print ("x0:{:=5f}  x1:{:=5f} y0:{:=5f}  y1:{:=5f} \n-> {}".format(lt_obj.x0, lt_obj.x1, lt_obj.y0, lt_obj.y1, texto))
+                    texto=self.BorrarBasura( lt_obj.get_text() )
+                    print (texto.encode('utf-8'))
+                    if self.debug: print ("x0:{:=5f}  x1:{:=5f} y0:{:=5f}  y1:{:=5f} ".format(lt_obj.x0, lt_obj.x1, lt_obj.y0, lt_obj.y1))
                     salida.append((lt_obj.x0, lt_obj.x1, lt_obj.y0, lt_obj.y1, texto))
             break
         return salida
 
+    def Ubiacion(self,x0,x1,y0,y1,texto):
+        salida =None
+        for bloque in ambiente['bloques']:
+            if bloque['x0']>=x0 and bloque['x1']<=x1 and bloque['y0']>=y0 and bloque['y1']<=y1:
+                texto=self.BorrarBasura( texto )
+                texto=texto.split("\n")
+                print (texto)
+
+                for selector in bloque['selectores']:
+                    if 'filas' in selector:
+                        print ('aqui')
+                        for fila   in range( selector['filas'][0], selector['filas'][1]  ):
+                            if fila >len(texto): break
+                            print ('fila:',fila-1, texto[fila-1])
+                            print (texto[fila-1][selector['cols'][0]-1 :selector['cols'][1]].strip())
+
+                    else:
+                        if selector['fila']<=len(texto):
+                            print (selector['nombre'])
+                            print (texto[selector['fila']-1][selector['cols'][0]-1 :selector['cols'][1]].strip())
+        print ('-'*50)
+
     def Procesar(self):
         print("Procesar()")
-        if self.error: return
-        arch_salida=op.join(self.ruta,"temporal")
-        if not op.isdir(arch_salida): makedirs(arch_salida)
-        arch_salida=op.join(arch_salida,"{}".format(uuid.uuid4()))      #Archivo temporal
+
         rsrcmgr = PDFResourceManager()
         laparams = LAParams()
         laparams.char_margin = 1.0
@@ -83,99 +113,83 @@ class ObjPDF():
         interpreter = PDFPageInterpreter(rsrcmgr, device)
         extracted_text = ''
         pagina=0
+        salida=[]
         for page in self.doc.get_pages():
             pagina +=1
             print ("ObjPDF:",pagina)
-            #if self.debug: print (":",pagina)
             interpreter.process_page(page)
             layout = device.get_result()
-            salida={}
-
+            temp=0
             for lt_obj in layout:
-                if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                    for selector in self.selectores:
-                        if lt_obj.x0 >= selector["sel_posx"][0] and lt_obj.x1 <= selector["sel_posx"][1]:
-                            if  lt_obj.y0 >= selector["sel_posy"][0] and lt_obj.y1 <= selector["sel_posy"][1]:
+                #print (lt_obj)
+                #print (isinstance(lt_obj, LTTextBoxHorizontal))
+                if not isinstance(lt_obj, LTTextBoxHorizontal): ## or isinstance(lt_obj, LTTextBox) or not isinstance(lt_obj, LTTextLine) :
+                    continue
 
-                                #if self.debug: print ("SI*"*40)
-                                texto=lt_obj.get_text()
-                                #if self.debug:
-                                #    print ("Selector:",selector["nombre"])
-                                #print ("seleccion", texto)
+                #print ('if lt_obj.x0>=',lt_obj.x0, ' and  lt_obj.x1<=',lt_obj.x1, ' and  lt_obj.y0>=', lt_obj.y0, 'and  lt_obj.y1<=', lt_obj.y1)
+                #if lt_obj.x0>= 21.6  and  lt_obj.x1<= 454.68  and  lt_obj.y0>= 400.166 and  lt_obj.y1<= 569.95:
+                #if lt_obj.x0 >= 21.6 and  lt_obj.x1 <=454.68 and lt_obj.y0>=508.896 and lt_obj.y1 <=517.2792:
+                self.Ubiacion(lt_obj.x0,lt_obj.x1,lt_obj.y0,lt_obj.y1, lt_obj.get_text())
+                    # texto=lt_obj.get_text()
+                    # texto=self.BorrarBasura( lt_obj.get_text() )
+                    # if texto.find('x0:  x1: y0:  y1:'):
+                    #     texto=texto.split("\n")
+                    #     print (texto, temp)
+                    #     salida.append(texto)
+                    #     temp +=1
 
-                                #El texto se parte por salto de linea \n y se guarda en lista,
-                                texto=texto.split("\n")
-                                #Campo nombre
-                                nombre=selector["nombre"] if "nombre" in selector else "blanco"
-                                if not nombre in salida:
-                                    #Nuevo campo
-                                    salida[nombre]={
-                                                 "letra":selector["letra"]            if "letra"      in selector else "Ubuntu",
-                                                 "letra_alto":selector["letra_alto"]  if "letra_alto" in selector else 10,
-                                                 "posx":selector["posx"]              if "posx"       in selector else 100,
-                                                 "posy":selector["posy"]              if "posy"       in selector else 100,
-                                                 "desp_x":selector["desp_x"]          if "desp_x"     in selector else 0,
-                                                 "desp_y":selector["desp_y"]          if "desp_y"     in selector else 0,
-                                                 "alinear":selector["alinear"]        if "alinear"    in selector else "I",
-                                                 "formato":selector["formato"]        if "formato"    in selector else None,
-                                                 "decode":selector["decode"]          if "decode"     in selector else None,
-                                                 "color":selector["color"]            if "color"      in selector else None,
-                                                 "fondo":selector["fondo"]            if "fondo"      in selector else None,
-                                                 "rotar":selector["rotar"]            if "rotar"      in selector else None,
-                                                 "texto":[]
-                                                 }
-                                    #print (selector)
-                                    if "parrafo" in selector:
-                                        #print ("aqui"*20)
-                                        salida[nombre]["parrafo"]=selector["parrafo"]
-                                        #print (salida)
+        return salida
 
-                                #Adicionar al campo mas texto
-                                fila=0      #Control Selector Fila
-                                for t in texto:
-                                    fila +=1
-                                    if "filas" in selector:
-                                        if type(selector["filas"]) ==list or  type(selector["filas"]) ==tuple:
-                                            if not fila in selector["filas"]: continue
-                                        elif type(selector["filas"])==int or type(selector["filas"])==float:
-                                            if fila !=selector["filas"]: continue
-                                        elif type(selector["filas"])==str:
-                                            if fila !=int(selector["filas"]): continue
-                                    #print (texto, fila,t)
 
-                                    #Esto se debe volver funcion de campos!!!!
-                                    if nombre=="textocuota":
-                                        if t.find("Anticipo")==0:
-                                            t="Anticipo Cuota"
-                                        elif t.find("Cuota")==0:
-                                            t="Cuota Extraordinaria"
-                                        elif t=="":
-                                            continue
-                                    if nombre=="Saldos" or nombre=="Cuotas"or nombre=="total":
-                                        if t=="":
-                                            continue
-                                    #······························<<
-
-                                    salida[nombre]["texto"].append(t)
-
-                                #break
-
-            temp=arch_salida+"-pag_{:06d}.tempo".format(pagina)
-            temp=open( temp ,"wb")
-            pickle.dump(salida,temp)
-            temp.close()
-        return arch_salida, pagina
+            # temp=arch_salida+"-pag_{:06d}.tempo".format(pagina)
+            # temp=open( temp ,"wb")
+            # pickle.dump(salida,temp)
+            # temp.close()
+        #return arch_salida, pagina
 
 
 if __name__ =="__main__":
     #Abre el ambiente
-    ruta_install="/home/marco/workspace/virtualenv3/py3Facil/desarrollo/trabajo"
-    ob=ObjFacil(ruta_install)
-    ob.AbrirAmbiente("recaudo.amb")
+    #ruta_install="/home/marco/workspace/virtualenv3/py3Facil/desarrollo/trabajo"
+    #ob=ObjFacil(ruta_install)
+    #ob.AbrirAmbiente("recaudo.amb")
+
+    ambiente={'bloques':[
+                        {   #Coordenas
+                            'x0': 21.6,
+                            'x1': 454.68,
+                            'y0': 400.166,
+                            'y1': 569.95,
+                            #selector
+                            'selectores':
+                                [{'nombre':'nrodoc',
+                                    'fila':8,
+                                    'cols':(66,80)
+                                },
+                                {'nombre':'fecha',
+                                    'fila':10,
+                                    'cols':(66,80)
+                                },
+                                {'vlr_letras':'fecha',
+                                    'filas':(14,16),
+                                    'cols':(16,80),
+                                    'concatenar':True
+                                }
+
+                                ],
+                        }
+                ]
+            }
 
 
-    ob=ObjPDF(  archpdf = "/home/marco/workspace/virtualenv3/py3Facil/desarrollo/trabajo/repositorio/malo.pdf",#datos.pdf",  malo.pdf
-                selector= ob.getSelector(),
-                ruta_recursos=ruta_install,
-                debug=True)
-    print (ob.Procesar())
+
+    ob=ObjPDF(  archpdf = "/home/www-data/web2py/applications/siendo/trabajo/spools/ce26749_makita.pdf",
+                ambiente = ambiente,
+                ruta_recursos='ruta_install',)
+
+    ob.VistaPdf()
+    print ('*'*50)
+    salida =ob.Procesar()
+    for i in salida:
+        print (i)
+    #print (ob.Procesar())

@@ -11,7 +11,9 @@ def index():
     bntEnvio=A("Envio Correo",_class="btn btn-success",
             _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
         )
-    pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo")
+    btnDescarga=A("Descarga Plano",_class="btn btn-success")
+    
+    pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo",btnDescarga)
     envios=fun_pendiente("E","Pendientes para envio Correo","bg-primary","tabla_pendiente", bntEnvio)
     BtnGuardar=A("Guardar", _class="btn btn-primary",
                 _onclick="ajax('{}',['btnusr','correo1', 'correo2', 'correo3'],':eval');$('#cmbMail').modal('hide');".format(URL('guardarCorreo') )
@@ -219,8 +221,12 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
                     _id=f"fila_c-{item.id}", _name=f"fila_c-{item.id}",)
                 )
     tabla.append(cuerpo)
-    tabla=DIV(DIV(H4(CENTER(titulo), botones if botones else "",_class="text-white"), _class="card-header {}".format(color)),
-            DIV(tabla, _class="card-body"),
+    tabla=DIV(DIV(DIV(titulo, _class="align-self-center"),  
+                  DIV(botones if botones else ""  , _class="align-self-end"),
+                  _class="card-header {} text-white".format(color)),
+            DIV(
+                DIV(tabla, _class='scrollable1panel'), 
+                _class="card-body"),
                 _class="card table-responsive")
     salida =XML(tabla)
     return salida

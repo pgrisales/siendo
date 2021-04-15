@@ -16,7 +16,7 @@ class ObjPartirDoc():
 	def __init__(self, ruta, archivo,
 					saltopag=None, oviarsalto=True, lnXpag=0,
 					 offsetdoc=0, offsetpag=0, posicion=0, moverlineas=None,nolineablanco=True,
-					 unirpaglog=None,eliminartexto=None,detallefijo=None, prueba=True, iniciopag=None, ln_posicion=50):
+					 unirpaglog=None,eliminartexto=None,detallefijo=None, prueba=False, iniciopag=None, ln_posicion=50):
 		logger.info("Archivo:{}".format(archivo) )
 		if not DIRECTORIO(UNIR(ruta,"temp")): CREAR(UNIR(ruta,"temp"))
 		self.nombre     = UNIR( ruta,"temp", "Facil_Partir{}".format(str(uuid1())) ) 	#nombre del archivo de salida
@@ -35,7 +35,7 @@ class ObjPartirDoc():
 		self.nolineablanco=nolineablanco
 		self.prueba=prueba
 		self.iniciopag=iniciopag
-		self.ln_posicion=ln_posicion
+		self.ln_posicion=ln_posicion        #Poscion inicio detalle
 
 	def ProcesarCR(self,linea):
 		linea=linea.replace("\r\n","")
@@ -161,7 +161,7 @@ class ObjPartirDoc():
 					continue
 				if self.moverlineas:
 					for moverlineas in self.moverlineas:
-						print (moverlineas)
+						#print (moverlineas)
 						if linea.find(moverlineas["buscartexto"])>-1:
 							#print ('contxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 							calculo=moverlineas["nuevafila"] - len(encabezado)
@@ -183,7 +183,7 @@ class ObjPartirDoc():
 					continue
 			if act_viene:continue
 			if act_detalle:
-				print (encabezado)
+				#print (encabezado)
 				#print ("Detalle")
 				linea=self.ProcesarCR(linea)
 				if linea.find(self.detallefijo["fin"])>-1:
@@ -208,7 +208,7 @@ class ObjPartirDoc():
 
 					if self.moverlineas:
 						for moverlineas in self.moverlineas:
-							print (moverlineas)
+							#print (moverlineas)
 							if linea.find(moverlineas["buscartexto"])>-1:
 								#print ('piecontxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 								calculo=moverlineas["nuevafila"] - len(encabezado)
@@ -235,7 +235,7 @@ class ObjPartirDoc():
 				act_viene=False
 				tempoffsetpag=self.offsetpag
 				iniciopagina=True
-				print ("fin de pagina")
+				#print ("fin de pagina")
 				# if salida:
 				# 	encabezado.append(salida[1])
 
@@ -291,10 +291,10 @@ class ObjPartirDoc():
 				for moverlinea in self.moverlineas:
 					buscar=linea.find(moverlinea['buscartexto'])
 					if buscar>-1:
-						print ('nuevafila',moverlinea ['nuevafila'], '-',nrolinea)
+						#print ('nuevafila',moverlinea ['nuevafila'], '-',nrolinea)
 						if nrolinea < moverlinea ['nuevafila']:
 							calculo=moverlinea ['nuevafila']-nrolinea
-							print ('calculo:',calculo)
+							#print ('calculo:',calculo)
 							for i in range(calculo):
 								arcsalida.write('enblanco\n'.encode('latin-1'))
 							nrolinea=moverlinea ['nuevafila']
@@ -369,10 +369,9 @@ if __name__ =="__main__":
 	obfacil=ObjFacil(rutarecursos=argumentos.recursos)
 	obfacil.AbrirAmbiente(argumentos.ambiente)
 	encabezado = obfacil.getEncabezado()
-	for x in encabezado:
-		print ("{} = {}".format(x,encabezado[x]))
-
-	print(obfacil.getSaltoLineaDoc())
+	#for x in encabezado:
+	#	print ("{} = {}".format(x,encabezado[x]))
+	#print(obfacil.getSaltoLineaDoc())
 
 	ob=ObjPartirDoc(
 					argumentos.recursos,
@@ -387,6 +386,7 @@ if __name__ =="__main__":
 					eliminartexto=obfacil.getElinarTexto(),
 					detallefijo  =obfacil.getDetalleFijo(),
 					iniciopag    =obfacil.getIniciopag(),
+                    ln_posicion  =obfacil.getPosDetalle()
 		)
 
 	ob.Procesar()
