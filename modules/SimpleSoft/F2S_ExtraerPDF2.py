@@ -126,9 +126,6 @@ class ObjPDF():
                 if not isinstance(lt_obj, LTTextBoxHorizontal): ## or isinstance(lt_obj, LTTextBox) or not isinstance(lt_obj, LTTextLine) :
                     continue
 
-                #print ('if lt_obj.x0>=',lt_obj.x0, ' and  lt_obj.x1<=',lt_obj.x1, ' and  lt_obj.y0>=', lt_obj.y0, 'and  lt_obj.y1<=', lt_obj.y1)
-                #if lt_obj.x0>= 21.6  and  lt_obj.x1<= 454.68  and  lt_obj.y0>= 400.166 and  lt_obj.y1<= 569.95:
-                #if lt_obj.x0 >= 21.6 and  lt_obj.x1 <=454.68 and lt_obj.y0>=508.896 and lt_obj.y1 <=517.2792:
                 self.Ubiacion(lt_obj.x0,lt_obj.x1,lt_obj.y0,lt_obj.y1, lt_obj.get_text())
                     # texto=lt_obj.get_text()
                     # texto=self.BorrarBasura( lt_obj.get_text() )
@@ -183,7 +180,7 @@ if __name__ =="__main__":
 
 
 
-    ob=ObjPDF(  archpdf = "/home/www-data/web2py/applications/siendo/trabajo/spools/ce26749_makita.pdf",
+    ob=ObjPDF(  archpdf = "/home/marco/workspace/virtualenv3/web2py/applications/siendo/trabajo/spools/ce26749_makita.pdf",
                 ambiente = ambiente,
                 ruta_recursos='ruta_install',)
 
