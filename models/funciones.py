@@ -61,12 +61,17 @@ def fun_Menu():
 					("fab fa-telegram-plane fa-xs",T('Comprobante de Pago a Proveedores'), URL('compegreso', 'index')),
 					("fab fa-deploydog fa-xs", T('Comprobante de Pago a Empleados'), URL('compnomina', 'index')),
 					("fas fa-certificate fa-xs",T('Certificación de Retención por IVA'), URL('retiva', 'index')),
-					("fas fa-wallet fa-xs",T('Retenciones'), URL('compretencionanual', 'index')),
+					("fas fa-wallet fa-xs",T('Ret. Fuente, Ret. ICA'), URL('compretencionanual', 'index')),
  				)))
-	if auth.has_membership("Proveedor") or auth.has_membership("Empleados") or auth.has_membership("Super"):
-		salida.append(itemmenus("DOCUMENTOS",(
+	#if auth.has_membership("Proveedor") or auth.has_membership("Empleados") or auth.has_membership("Super"):
+	salida.append(itemmenus("DOCUMENTOS",(
 									("fas fa-book fa-xs",T('Publicaciones'), URL('documentos', 'index')),
 		)))
+	if auth.has_membership("Super"):
+		salida.append(itemmenus("GENERAL",(
+									("fas fa-radiation-alt",T('Configuracion'), URL('cntrpal', 'index')),
+		)))
+
 
 	salida.append(
 		LI(XML('<a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a>'),

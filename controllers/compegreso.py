@@ -59,16 +59,20 @@ def Verificar(archivo):
     archivo=UNIR(request.folder,"uploads",archivo)
     print (archivo)
     arch=open(archivo,"rb")
-
     datos=arch.read(500)
     arch.close()
     salida=False
     datos=datos.decode("latin-1")
-    
-    control=['|    PAGO ELECTRONICO   |', "|COMPROBANTES DE EGRESOS|"]
 
+    #Modificacion lectura de PDF
+    if datos.find ('%PDF')==0: salida =True
+    #######----####
+    control=['|    PAGO ELECTRONICO   |', "|COMPROBANTES DE EGRESOS|"]
     for item in control:
         if datos.find(item)>-1:salida=True
+
+
+
 
     return salida
 
