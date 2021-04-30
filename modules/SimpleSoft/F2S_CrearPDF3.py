@@ -45,10 +45,10 @@ class objF2S_PDF():
 
     def VerificarRuta(self, ruta_app, nombrepdf):
         nombre=os.path.split(nombrepdf)[0:-1]
-        ruta=os.path.join(ruta_app, 'uploads','PDF', nombre[0])
+        ruta=os.path.join(ruta_app, 'static','PDF', nombre[0])
         if not os.path.isdir(ruta):
             os.makedirs(ruta)
-        ruta=os.path.join(ruta_app, 'uploads','PDF', nombrepdf)
+        ruta=os.path.join(ruta_app, 'static','PDF', nombrepdf)
         return  ruta
 
     def Grilla(self,pdf_f2s,tam):
@@ -92,20 +92,26 @@ class objF2S_PDF():
         formato.wrapOn(pdf_f2s, formato.drawWidth, formato.drawHeight)
         formato.drawOn(pdf_f2s, 0 , 0)
         pdf_f2s.restoreState()
-        self.Grilla(pdf_f2s,tam)
+        #self.Grilla(pdf_f2s,tam)
 
         for items in self.pagina.campos:
             datos = self.pagina.campos[items]
 
-            print (items, ':', datos)
-            print ('*-'*20)
+            #print (items, ':', datos)
+            #print ('*-'*20)
             posx=datos["posx"] if "posx" in datos else 0
             posy=datos["posy"] if "posy" in datos else 0
             desx=datos["desp_x"] if "desp_x" in datos else 0
             desy=datos["desp_y"] if "desp_y" in datos else 0
             desy =desy *-1      #Subir
 
-            print ('posiciones:', posx, posy, datos["alinear"] )
+
+            #print ('posiciones:', posx, posy, datos["alinear"] )
+            if "parrafo" in datos:
+                self.Parrafo(datos,pdf_f2s)
+                continue
+
+            pdf_f2s.setFont(datos["letra"],datos["letra_alto"])
 
             for linea in datos["texto"]:
                 if "colortexto_rgb" in datos:
@@ -131,7 +137,7 @@ class objF2S_PDF():
 
     #
     def Parrafo(self,datos, pdf_f2s):
-        print ("Parrafo!")
+        #print ("Parrafo!")
         style = ParagraphStyle(
             name='Normal',
             fontName=datos["letra"],

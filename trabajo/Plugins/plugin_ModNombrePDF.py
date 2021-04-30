@@ -20,8 +20,9 @@ def plugin_main(*args, **kwargs):
     ###salida = '{}/{}/{}_{}.pdf'.format(nombre,fecha,nrodoc,uuid.uuid1())
 
     nombre= kwargs['nombre']
-    fecha = datetime.now().strftime('%Y-%m')
+    fecha_ano = datetime.now().strftime('%Y')
+    fecha_mes = datetime.now().strftime('%m')
     nrodoc = kwargs['nrodoc'][0]
-    salida = join(nombre, fecha, '{}_{}.pdf'.format(nrodoc,uuid.uuid1()) )
+    salida = join(nombre, fecha_ano, fecha_mes, '{}_{}.pdf'.format(nrodoc,uuid.uuid1()) )
     print (salida)
     return 'nombrepdf',salida

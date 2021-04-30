@@ -13,8 +13,9 @@ def call_plugin(name, *args, **kwargs):
 
 
 def AdicionarRuta(ruta):
-    PATH.extend([ruta])
-    print (PATH)
+    if not ruta in PATH:
+        PATH.extend([ruta])
+        print (PATH)
 
 if __name__==  '__main__':
     AdicionarRuta('/home/marco/Clientes/Solucionenlinea/siendo/trabajo/Plugins')

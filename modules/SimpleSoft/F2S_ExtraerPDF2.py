@@ -120,19 +120,32 @@ class ObjPDF():
 
         return salida
 
-    def SetPagClon(self,texto, nombre, alinear,desp_x,desp_y,letra,letra_alto,posx,posy):
+    def SetPagClon(self,texto, nombre, alinear,desp_x,desp_y,letra,letra_alto,posx,posy, parrafo=None):
         #Recibe los datos y configuracion de salida al pdf
         if not nombre in self.obPagina.campos:
-            self.obPagina.campos[nombre]={
-                            'alinear':alinear,
-                            'desp_x':desp_x,
-                            'desp_y':desp_y,
-                            'letra':letra,
-                            'letra_alto':letra_alto,
-                            'posx':posx,
-                            'posy':posy,
-                            'texto':[]
-                            }
+            if parrafo:
+                self.obPagina.campos[nombre]={
+                                'alinear':alinear,
+                                'desp_x':desp_x,
+                                'desp_y':desp_y,
+                                'letra':letra,
+                                'letra_alto':letra_alto,
+                                'posx':posx,
+                                'posy':posy,
+                                'parrafo':parrafo,
+                                'texto':[]
+                                }
+            else:
+                self.obPagina.campos[nombre]={
+                                'alinear':alinear,
+                                'desp_x':desp_x,
+                                'desp_y':desp_y,
+                                'letra':letra,
+                                'letra_alto':letra_alto,
+                                'posx':posx,
+                                'posy':posy,
+                                'texto':[]
+                                }
         if isinstance(texto,list):
             if isinstance(self.obPagina.campos[nombre]['texto'], list):
                 for adicionar in texto:
@@ -175,9 +188,13 @@ class ObjPDF():
                         if selector['fila']>len(texto):continue
                         temp=texto[selector['fila']-1][selector['cols'][0]-1 :selector['cols'][1]].strip()
 
+                    parrafo=None
+                    if 'parrafo' in selector:
+                        parrafo=selector['parrafo']
+
                     self.SetPagClon(temp,selector['nombre'],selector['alinear'],
                                 selector['desp_x'],selector['desp_y'],selector['letra'],
-                                selector['letra_alto'],selector['posx'],selector['posy'])
+                                selector['letra_alto'],selector['posx'],selector['posy'], parrafo)
 
     def ProcPag(self):
         '''

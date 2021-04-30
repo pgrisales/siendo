@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from os.path import join as UNIR
+from os import listdir as LISTDIR
 @auth.requires(lambda: auth.has_membership('Administradores') or auth.has_membership ('Super') )
 def index():
     lugar = request.vars.lugar or 2
@@ -39,10 +40,12 @@ def Fun_Titulos():
     for item in consulta:
         linea=TR(TD(item.descripcion))
         if auth.has_membership ('Super'):
-            linea.append(TD(item.ambiente))
+            linea.append(TD(item.ambiente[:-4]))
             linea.append(TD(item.carpeta))
 
-        temp="ajax('{}',['id'],':eval');".format (URL('ajaxEditarTitulo', vars= dict(titulo=item.id)))
+        temp="$('#DialModal').modal('show');"
+        temp +="ajax('{}',['id'],':eval');".format (URL('ajaxEditarTitulo', vars= dict(titulo=item.id)))
+
         linea.append(A('Editar', _onclick=temp, _class='btn btn-primary text-white'))
         cuerpo.append(linea)
     salida.append(TABLE(titulos, cuerpo, _class='table table-bordered'))
@@ -50,9 +53,48 @@ def Fun_Titulos():
 
 def ajaxEditarTitulo():
     id_parametro=request.vars.titulo
-    return "alert('{}');".format (id_parametro)
+    campos=[db.tbl_modulo.id, db.tbl_modulo.descripcion]
+    consulta=db(db.tbl_modulo.id==id_parametro).select(*campos).first()
+    salida=DIV()
+    salida.append(fun_input("titulonuevo","Titulo Actual","Nuevo Titulo", valor=consulta.descripcion))
+    if auth.has_membership ('Super'):
+        ruta= UNIR (request.folder,'trabajo','ambientes')
+        try:
+            temp=SELECT(_name='idambiente', id='idambiente')
+            for indice in LISTDIR(ruta):
+                if indice[-4:]=='.amb':
+                    temp.append(OPTION(indice[:-4], _value=indice))
+            salida += temp
+        except Exception as e:
+            salida +=e
+    salida="$('#modalCuepo').html('{}');".format(XML(salida))
+    salida+="$('#modalEncabezado').html('<CENTER>Cambio Texto del Titulo</CENTER>');"
+    temp= URL('ajaxGuardaTitulosPara',vars=dict(idpara=id_parametro ))
+    botones =XML(A("Guardar",_class="btn btn-success text-white",
+                _onclick="ajax('{}',['titulonuevo','idambiente'],':eval');".format(temp )
+                ))
+    botones +='<button type="button" id="bntcerrar" name=="bntcerrar" class="btn btn-secondary text-white" data-dismiss="modal">Cerrar</button>'
+    salida+="$('#modalPie').html('{}');".format(botones)
+    return salida
 
 
+def ajaxGuardaTitulosPara():
+    nuevotexto=request.vars.titulonuevo
+    id_ambiente=request.vars.idambiente
+    id_parametro=request.vars.idpara
+    if not nuevotexto:
+        return "alert('No se admite texto en blanco!!!');"
+
+    if id_ambiente:
+        salida = db(db.tbl_modulo.id==id_parametro).update(descripcion=nuevotexto,ambiente=id_ambiente)
+    else:
+        salida = db(db.tbl_modulo.id==id_parametro).update(descripcion=nuevotexto)
+    if salida:
+        salida='Registro Modificado.. Pulse la tecla [F5] para ver el cambio'
+    else:
+        salida='Error no encuentro el registro, llamar a Solucion en Linea..!'
+    salida ="alert('{}');$('#bntcerrar').click();".format(salida)
+    return salida
 
 @auth.requires(lambda: auth.has_membership('Administradores') or auth.has_membership ('Super') )
 def fun_ModCorreo():

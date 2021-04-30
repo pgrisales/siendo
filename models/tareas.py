@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+from os.path import join as JOIN
+from os import remove as REMOVE
 IDMODULO=""
-
 def VerificarModulo(modulo):
     #Anterior mente el modulo se verifica con el id pero se cambia al
     #nombre del ambiente para buscar el id
@@ -11,6 +12,58 @@ def VerificarModulo(modulo):
     salida=None
     if buscar: salida = buscar.id
     return salida
+
+def VerificarCliente(nit, nombre):
+    cliente =db(db.tbl_cliente.nit==nit).select().first()
+    correo=None
+    if not cliente:#no Existe el Nit se crea el usuario y Cliente
+        print("se crear por que no exites nit")
+        user_id=db.auth_user.insert(first_name=nombre,
+                last_name=nit,
+               username=nit,
+               password=str(CRYPT(salt=True)(nit)[0])
+                )
+        db.commit()
+        id_cliente=db.tbl_cliente.insert(  nit=nit,
+                            nombre=nombre,
+                            id_usuario=user_id,
+                            proveedor=False
+                        )
+        db.commit()
+    else:   #Datos del cliente
+        id_cliente=cliente.id
+        correo=cliente.correo1
+
+    print("id_cliente:",id_cliente)
+    return id_cliente, correo
+
+def RegistroRecepcion (idcliente, nrodoc, valor, fecha, correo, nombrepdf,modulo):
+    #Si tiene correo lo coloca en estado para enviar= E
+    estado= 'E' if correo  else "C"
+    print (f"crear recepcion en estado {estado}")
+    #si el nrodoc esta registrado no se actualiza.
+    if not  db(db.tbl_recepcion.nrodoc==nrodoc).isempty():
+        #Falta borrar el pdf creado
+        ruta=JOIN(request.folder,'static','PDF',nombrepdf)
+        print ('borrar', ruta)
+        try:
+            REMOVE(ruta)
+        except Exception as e:
+            print (e)
+        return True
+
+    #Esta ruta no tiene la direccion de la app
+    db.tbl_recepcion.insert(id_cliente=idcliente,
+                        nrodoc=nrodoc,
+                        valor=valor,
+                        rutapdf='PDF/'+nombrepdf,
+                        fecha=fecha,
+                        #fecha_hasta=campo["Fecha_Hasta"] if "Fecha_Hasta" in campo else "" ,
+                        estado=estado,
+                        tipdoc=modulo,
+                    )
+    db.commit()
+
 
 
 
@@ -28,17 +81,35 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
     from SimpleSoft.F2S_filascol 	import ObjFilas
 
     modulo = VerificarModulo(modulo)
+
     #print (f"modulo {modulo}")
+    #print (f'archivo {archivo}')
 
     novedad=[]
 
     idmodulo=db(db.tbl_modulo.id==modulo).select().first()
     rutarecursos=UNIR(request.folder,"trabajo")
     archivo=UNIR(request.folder,"uploads",archivo)
+
     ob=ObjFacil( rutarecursos )
     ob.AbrirAmbiente(idmodulo.ambiente)
-    obFilasCol=ObjFilas(ob, rutarecursos)
+    print (ob.encabezado['modo'],archivo,rutarecursos)
 
+
+    if ob.encabezado['modo']==4:
+        docuementos  = ProcesarEntradaPDF(rutarecursos, archivo, ob.encabezado)
+        print ('siguiente')
+        for campo in docuementos:
+            print (campo)
+            idcliente, correo =VerificarCliente(campo['nit'] ,campo['entregadoa'])
+            RegistroRecepcion (idcliente, campo['nrodoc'], campo['valor_total'],
+                         campo['fecha'], correo, campo['nombrepdf'] ,idmodulo)
+
+
+        return 'Generando pdf'
+
+
+    obFilasCol=ObjFilas(ob, rutarecursos)
     campos = obFilasCol.Procesar(archivo)
 
     if not isinstance(campos, list):  return False
@@ -208,7 +279,6 @@ def fun_EnviarCorreo(envio, correo=None, paraserver=1):
         db.commit()
     return ennvio
 
-
 def F2s_Estado(tarea):
     '''Mira el esado de la tarea genereada'''
     detener=False
@@ -256,11 +326,38 @@ def F2s_VerPDF(id_recepccion):
     if id_recepccion==None:    return "alert ('No se ha entregado el id del pdf');"
     #Consultas
     recepcion=db(db.tbl_recepcion.id==id_recepccion).select().first()
+    print ('queso',id_recepccion)
+    print ('aquii',recepcion)
     if not recepcion: return "alert ('No se encuentra id del pdf');"
     salida='var f2s_options = {'
     salida+='height: "500px",'
     salida+="pdfOpenParams: { view: 'FitV', page: '1' }"
     salida+='};'
-    salida += "PDFObject.embed('{}',viewer,f2s_options);\n".format(URL("static",recepcion.rutapdf));
+    salida += "PDFObject.embed('{}',viewpdf,f2s_options);\n".format(URL("static",recepcion.rutapdf));
     salida=salida.replace("\\","/") #Por si viene desde windows!!
+    return salida
+
+def ProcesarEntradaPDF(rutarecursos, archivo, ambiente):
+    '''Lee los datos de un pdf, y los envia al ambiente. '''
+    from SimpleSoft.F2S_ExtraerPDF2 import ObjPDF
+    ob=ObjPDF(  archpdf = archivo,
+                    ruta_recursos=rutarecursos,
+                    ambiente = ambiente,
+                    ruta_app=request.folder,
+                    debug= False
+                )
+    if ob.error:
+        print ('eeeeeerrrrrooooorrr')
+        return
+
+    ob.VistaPdf()
+    print ('*'*50)
+    salida =ob.Procesar()
+    # print (ob.Procesar())
+    salida=[]
+    for i in ob.documentos:
+        #print (ob.documentos[i]['camposweb2py'])
+        salida.append(ob.documentos[i]['camposweb2py'])
+    # print (ob.documentos['1']['datos'].campos)
+    # print (ob.documentos['10']['datos'].campos)
     return salida
