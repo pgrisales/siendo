@@ -18,9 +18,9 @@ def plugin_main(*args, **kwargs):
     else:
         kwargs['objPagina'].campos[kwargs['a']]['texto'].insert(0,'')
     #borrar la linea adiciona en a si sobrepas la columna Cuenta
-    if kwargs['limite'] in kwargs['objPagina'].campos:
-
-        limite =len ( kwargs['objPagina'].campos[kwargs['limite']]['texto'] )
-        elementos =len (kwargs['objPagina'].campos[kwargs['a']]['texto'])
-        if  elementos > limite:
-            kwargs['objPagina'].campos[kwargs['a']]['texto']=kwargs['objPagina'].campos[kwargs['a']]['texto'][:limite]
+    # if kwargs['limite'] in kwargs['objPagina'].campos:
+    #
+    #     limite =len ( kwargs['objPagina'].campos[kwargs['limite']]['texto'] )
+    #     elementos =len (kwargs['objPagina'].campos[kwargs['a']]['texto'])
+    #     if  elementos > limite:
+    #         kwargs['objPagina'].campos[kwargs['a']]['texto']=kwargs['objPagina'].campos[kwargs['a']]['texto'][:limite]
