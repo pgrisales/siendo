@@ -52,6 +52,8 @@ def RegistroRecepcion (idcliente, nrodoc, valor, fecha, correo, nombrepdf,modulo
             print (e)
         return True
 
+    print (valor)
+
     #Esta ruta no tiene la direccion de la app
     db.tbl_recepcion.insert(id_cliente=idcliente,
                         nrodoc=nrodoc,

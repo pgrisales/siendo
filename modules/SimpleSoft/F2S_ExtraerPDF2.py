@@ -13,15 +13,15 @@ import uuid
 import pickle
 import F2S_LoadPlugins
 from SimpleSoft.F2S_CrearPDF3  	import objF2S_PDF
+#from F2S_CrearPDF3  	import objF2S_PDF
 
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTTextBoxHorizontal
 #from Facil import ObjFacil
-
 import logging
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 
 class ObClonPagina():
@@ -39,7 +39,6 @@ class ObClonPagina():
             print (i,':')
             for j in self.campos[i]:
                 print ('    ',j,':', self.campos[i][j])
-
 
 class ObjPDF():
     """docstring for ObjPDF"""
@@ -66,10 +65,7 @@ class ObjPDF():
             self.doc.initialize('')
         else:
             self.error="No existe Archivo:[{}]".format(archpdf)
-
         F2S_LoadPlugins.AdicionarRuta(op.join(ruta_recursos,'Plugins'))
-        #F2S_LoadPlugins.call_plugin("prueba", 1234,estoes='otro')
-
 
     def LeerAmbiente(self, rutatrabajo, archivo):
         ruta =op.join(rutatrabajo,'ambientes', archivo)
@@ -120,7 +116,7 @@ class ObjPDF():
 
         return salida
 
-    def SetPagClon(self,texto, nombre, alinear,desp_x,desp_y,letra,letra_alto,posx,posy, parrafo=None):
+    def SetPagClon(self,texto, nombre, alinear,desp_x,desp_y,letra,letra_alto,posx,posy, parrafo=None, colortexto_rgb=None):
         #Recibe los datos y configuracion de salida al pdf
         if not nombre in self.obPagina.campos:
             if parrafo:
@@ -133,8 +129,10 @@ class ObjPDF():
                                 'posx':posx,
                                 'posy':posy,
                                 'parrafo':parrafo,
-                                'texto':[]
+                                'texto':[],
+                                'colortexto_rgb':colortexto_rgb
                                 }
+
             else:
                 self.obPagina.campos[nombre]={
                                 'alinear':alinear,
@@ -144,7 +142,8 @@ class ObjPDF():
                                 'letra_alto':letra_alto,
                                 'posx':posx,
                                 'posy':posy,
-                                'texto':[]
+                                'texto':[],
+                                'colortexto_rgb':colortexto_rgb
                                 }
         if isinstance(texto,list):
             if isinstance(self.obPagina.campos[nombre]['texto'], list):
@@ -191,10 +190,14 @@ class ObjPDF():
                     parrafo=None
                     if 'parrafo' in selector:
                         parrafo=selector['parrafo']
+                    colortexto_rgb = None
+                    if  'colortexto_rgb' in selector:
+                        colortexto_rgb = selector['colortexto_rgb']
 
                     self.SetPagClon(temp,selector['nombre'],selector['alinear'],
                                 selector['desp_x'],selector['desp_y'],selector['letra'],
-                                selector['letra_alto'],selector['posx'],selector['posy'], parrafo)
+                                selector['letra_alto'],selector['posx'],selector['posy'], parrafo,
+                                colortexto_rgb )
 
     def ProcPag(self):
         '''
@@ -218,41 +221,47 @@ class ObjPDF():
                 if not isinstance(lt_obj, LTTextBoxHorizontal): ## or isinstance(lt_obj, LTTextBox) or not isinstance(lt_obj, LTTextLine) :
                     continue
                 self.Ubiacion(lt_obj)
+
             if 'funciones' in self.ambiente:    #inicia finciones para despues de la captura de datos
                 #print (self.ambiente['funciones'])
                 for procedimiento in self.ambiente['funciones']:
+                    logger.info(procedimiento)
                     if procedimiento.find('F2S_LoadPlugins.call_plugin')==0:
                         eval(procedimiento)
             yield pagina
+
+    def ExtaerCamposweb2py(self,procpag):
+        camposweb2py={}#{'nombrepdf':'NoTiene_{}.pdf'.format(uuid.uuid1()) }
+        if not 'web2pycampos' in self.ambiente: return camposweb2py
+        for procedimiento in self.ambiente['web2pycampos']:
+            if procedimiento.find('F2S_LoadPlugins.call_plugin')==0:
+                try:
+                    item,valor =  eval(procedimiento)
+                    camposweb2py[item]=valor
+                except Exception as e:
+                    logger.error(f'Error en el plugin revisar datos:{e}')
+            else:
+                if procedimiento in self.obPagina.campos:
+                    camposweb2py[procedimiento]=self.obPagina.campos[procedimiento]['texto'][0]
+                else:
+                    logger.error(f'Error: campo [{procedimiento}] no se a seleccionado en el ambiente:')
+
+        #print (f'camposweb2py:{camposweb2py }')
+        self.documentos['{}'.format(procpag)]={'camposweb2py':camposweb2py, 'datos':self.obPagina}
+        return camposweb2py
 
     def Procesar(self):
         if self.debug:print("Procesar()")
         if self.error:return
         for procpag in self.ProcPag():
-            if self.debug:
-                print ('procpag:',procpag)
-                self.obPagina.VerContenido()
-            camposweb2py={}
-            for procedimiento in self.ambiente['web2pycampos']:
-                if procedimiento.find('F2S_LoadPlugins.call_plugin')==0:
-                    try:
-                        item,valor =  eval(procedimiento)
-                        camposweb2py[item]=valor
-                    except Exception as e:
-                        print ('Error en el plugin revisar datos:',e)
-                else:
-                    if procedimiento in self.obPagina.campos:
-                        camposweb2py[procedimiento]=self.obPagina.campos[procedimiento]['texto'][0]
-                    else:
-                        print (f'Error: campo [{procedimiento}] no se a seleccionado en el ambiente:')
-
-            if self.debug:print ('camposweb2py::', camposweb2py )
-            self.documentos['{}'.format(procpag)]={'camposweb2py':camposweb2py, 'datos':self.obPagina}
+            # if self.debug:
+            #     print ('procpag:',procpag)
+            #     self.obPagina.VerContenido()
+            # print (procpag)
+            camposweb2py=self.ExtaerCamposweb2py(procpag)
             #Crear PDF...
-            print ('aqui')
             o_salidapdf = objF2S_PDF(self.ambiente, self.ruta_app,camposweb2py['nombrepdf'], self.obPagina)  #Se crea una nueva instancia por cada nueva pagina...!!!
             o_salidapdf.Procesar()
-            print ('fue')
             #Limpiar datos de la pagina procesada. Reinicio!!!!
             self.obPagina=ObClonPagina()
 
@@ -260,19 +269,36 @@ class ObjPDF():
 
         return True
 
-
 if __name__ =="__main__":
     import sys
+    print (sys.argv)
     ob=ObjPDF(  archpdf = sys.argv[1],
                 ruta_recursos=sys.argv[2],
                 ambiente = sys.argv[3],
+                ruta_app=sys.argv[4],
                 debug= False
             )
+
+    # Create handlers
+    c_handler = logging.StreamHandler()
+    c_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    c_handler.setFormatter(c_format)
+    if len(sys.argv)>5:
+    	logger.setLevel(logging.DEBUG)
+    else:
+    	logger.setLevel(logging.INFO)
+    logger.addHandler(c_handler)
+
+    print (len(sys.argv))
+
+
+
+
     if not ob.error:
         ob.VistaPdf()
         print ('*'*50)
         salida =ob.Procesar()
         #print (ob.Procesar())
         print (ob.documentos['0']['datos'].campos)
-        print (ob.documentos['1']['datos'].campos)
-        print (ob.documentos['10']['datos'].campos)
+        #print (ob.documentos['1']['datos'].campos)
+        #print (ob.documentos['10']['datos'].campos)

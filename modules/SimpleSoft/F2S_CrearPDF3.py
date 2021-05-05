@@ -5,7 +5,7 @@ import calendar
 import logging
 from datetime import datetime
 
-import SimpleSoft.F2S_CodigoBarras as f2s_cod128
+#import SimpleSoft.F2S_CodigoBarras as f2s_cod128
 
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.lib.styles import ParagraphStyle
@@ -96,6 +96,8 @@ class objF2S_PDF():
 
         for items in self.pagina.campos:
             datos = self.pagina.campos[items]
+            if not 'posx' in datos: continue        #Si no tiene posx salta
+            if not 'posy' in datos: continue        #Si no tiene posy salta
 
             #print (items, ':', datos)
             #print ('*-'*20)
@@ -115,8 +117,9 @@ class objF2S_PDF():
 
             for linea in datos["texto"]:
                 if "colortexto_rgb" in datos:
-                    #print (datos["colortexto_rgb"])
-                    pdf_f2s.setFillColorRGB(*datos["colortexto_rgb"])
+                    if datos["colortexto_rgb"]:
+                        print ('datos["colortexto_rgb"]', datos["colortexto_rgb"])
+                        pdf_f2s.setFillColorRGB(*datos["colortexto_rgb"])
 
                 if datos["alinear"]=="C":
                     pdf_f2s.drawCentredString(posx, posy, linea.strip() )
@@ -158,9 +161,8 @@ class objF2S_PDF():
         #Carga de los fonts
         for tipo in tipos:
             ruta=os.path.join(self.ruta_app,'trabajo',"fonts",tipo[1])
-            print(f"fonts archivo:{ruta}")
+            logger.debug(f"fonts archivo:{ruta}")
             if os.path.isfile(ruta):
                 pdfmetrics.registerFont(TTFont(tipo[0],ruta))
             else:
                 logger.error(f"No existe el archivo:{ruta}")
-                print(f"No existe el archivo:{ruta}")

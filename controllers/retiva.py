@@ -40,7 +40,7 @@ def index():
             tarea=db.tbl_control_maestro.insert(
                 descripcion="Subir Archvo de Nomina",
                 funcion="Crear Pdf",
-                args="{" + f"'archivo': '{formulario.vars.archivo}','paraserver':{parase}," + "}",
+                args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':{3}," + "}",
                 estado= 'I')
 
             # tarea = planificador.queue_task(GenerarPDF,
@@ -61,12 +61,16 @@ def Verificar(archivo):
     from os.path import join as UNIR
     archivo=UNIR(request.folder,"uploads",archivo)
     arch=open(archivo,"rb")
-
     datos=arch.read(300)
     arch.close()
     salida=False
     datos=datos.decode("latin-1")
     print ("Verifcar",datos)
+
+    #Modificacion lectura de PDF
+    if datos.find ('%PDF')==0: return True
+    #######----####
+
     if datos.find("CERTIFICADO DE RETENCION POR IVA")>-1:salida=True
     return salida
 

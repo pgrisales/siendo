@@ -65,14 +65,11 @@ def Verificar(archivo):
     datos=datos.decode("latin-1")
 
     #Modificacion lectura de PDF
-    if datos.find ('%PDF')==0: salida =True
+    if datos.find ('%PDF')==0: return True
     #######----####
     control=['|    PAGO ELECTRONICO   |', "|COMPROBANTES DE EGRESOS|"]
     for item in control:
         if datos.find(item)>-1:salida=True
-
-
-
 
     return salida
 

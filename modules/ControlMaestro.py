@@ -16,7 +16,7 @@ def Procesar():
                 db.commit()
                 print ('trabajo:', trabajo.args)
                 datos=eval(trabajo.args)
-                #print (datos)
+                print (datos)
                 GenerarPDF(datos["archivo"],datos['modulo'])
                 trabajo.update_record(estado="F")
                 db.commit()

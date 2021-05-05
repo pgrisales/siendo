@@ -19,10 +19,13 @@ def plugin_main(*args, **kwargs):
     ##nombre= kwargs['nombre']
     ###salida = '{}/{}/{}_{}.pdf'.format(nombre,fecha,nrodoc,uuid.uuid1())
 
+    print ('Plugin ModnombrePDF')
     nombre= kwargs['nombre']
     fecha_ano = datetime.now().strftime('%Y')
     fecha_mes = datetime.now().strftime('%m')
     nrodoc = kwargs['nrodoc'][0]
     salida = join(nombre, fecha_ano, fecha_mes, '{}_{}.pdf'.format(nrodoc,uuid.uuid1()) )
+    print '(@'*20)
     print (salida)
+    print '(@'*20)
     return 'nombrepdf',salida

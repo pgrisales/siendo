@@ -14,5 +14,9 @@ def plugin_main(*args, **kwargs):
     salida  = salida.replace('$','')
     salida  = salida.replace('.','')
     salida  = salida.replace(',','.')
+    if salida.find('-')>-1:
+        salida = salida.replace('-','')
+        salida ='-'+salida
+
     salida  = float( salida.strip())
     return 'valor_total', salida
