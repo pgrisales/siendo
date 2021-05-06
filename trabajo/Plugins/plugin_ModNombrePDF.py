@@ -25,7 +25,5 @@ def plugin_main(*args, **kwargs):
     fecha_mes = datetime.now().strftime('%m')
     nrodoc = kwargs['nrodoc'][0]
     salida = join(nombre, fecha_ano, fecha_mes, '{}_{}.pdf'.format(nrodoc,uuid.uuid1()) )
-    print '(@'*20)
     print (salida)
-    print '(@'*20)
     return 'nombrepdf',salida
