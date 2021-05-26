@@ -169,25 +169,15 @@ def index():
                 else:
                     estadoe=item[contar]
         if id_recepcion in modulos: modulos.remove(id_recepcion)
-        cuerpo=DIV(_class='card-body')
+        cuerpo=DIV(_class='card-body border-right border-bottom border-danger')
         cuerpo.append(FunTabla(estadoc,estadoe))
         formulario.append(DIV(titulo,cuerpo, _class='card m-5'))
     #Sin pendientes
     consulta=db(db.tbl_modulo.id.belongs(modulos)).select(db.tbl_modulo.descripcion, cacheable=True)
     for item in consulta:
         titulo=FunTitulo(item.descripcion, 'bg-primary', False)
-        cuerpo=DIV(_class='card-body')
+        cuerpo=DIV(_class='card-body border-right border-bottom border-primary')
         cuerpo.append(FunTabla(0,0))
         formulario.append(DIV(titulo,cuerpo, _class='card m-5'))
 
     return dict(formulario=formulario, consulta=modulos)
-
-
-
-
-
-@auth.requires_login()
-def index_old():
-
-    response.flash = T("Bienvenidos")
-    return dict(message=T('Sistema de Control de Documentos'))

@@ -1,25 +1,23 @@
 # -*- coding: utf-8 -*-
-#
+# ---
 @auth.requires(lambda: auth.has_membership ('Gerencia') or auth.has_membership('Administradores') or auth.has_membership ('Super') )
 def index():
     posicion_tab=request.vars.posicion_tab or 1
     tarea=0
-    modulos=db(db.tbl_modulo.id==4).select().first()
+    modulos=db(db.tbl_modulo.ambiente=='retencionanual.amb').select().first()
     if modulos==None:
         raise HTTP(404)
 
-    bntEnvio=DIV(A("Envio Correo",_class="btn btn-success",
-                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
-            ),"|",A("No Envio",_class="btn btn-danger",
-                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('noenviocorreo'))))
-            )
+    bntEnvio=A("Envio Correo",_class="btn btn-success",
+            _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
+        )
+    btnDescarga=A("Descarga Plano",_class="btn btn-success")
 
-    pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo")
+    pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo",btnDescarga)
     envios=fun_pendiente("E","Pendientes para envio Correo","bg-primary","tabla_pendiente", bntEnvio)
     BtnGuardar=A("Guardar", _class="btn btn-primary",
                 _onclick="ajax('{}',['btnusr','correo1', 'correo2', 'correo3'],':eval');$('#cmbMail').modal('hide');".format(URL('guardarCorreo') )
                 )
-
     form_enviados=(DIV(   LABEL("Fecha Inicial", _class="col-sm-1 col-form-label"),
                                 DIV(INPUT(_type="date",_class="form-control", _id="fecha_inicio",
                                 _name="fecha_inicio"),_class="col-sm-2"),
@@ -34,51 +32,42 @@ def index():
                                 ),
                         _class="form-group row")
                         )
-
     formulario = SQLFORM.factory(Field('archivo', 'upload', label="Archivo de datos"))
     if formulario.process().accepted:
         response.flash = 'formulario aceptado'
         if Verificar(formulario.vars.archivo):
-            paraserver=VerificarModulo("retencionanual.amb")
             tarea=db.tbl_control_maestro.insert(
                 descripcion="Subir Archvo de Nomina",
                 funcion="Crear Pdf",
-                args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':{4}," + "}",
+                args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':'retencionanual.amb'" + "}",
                 estado= 'I')
-
-            # tarea = planificador.queue_task(GenerarPDF,
-            #                             pvars=dict(archivo = formulario.vars.archivo,modulo=3),
-            #                             )#timeout = 360)
-            # tarea = tarea.id
         else:
-            db.tbl_mensajes.insert(mensaje=f"Archivo:[{formulario.vars.archivo}] no es un CERTIFICADO DE RETENCION POR IVA!")
-            msgerror=f"Archivo:[{formulario.vars.archivo}] no es un CERTIFICADO DE RETENCION POR IVA!"
+            db.tbl_mensajes.insert(mensaje=f"Archivo:[{formulario.vars.archivo}] no es un Comprobante retención anual!")
+            msgerror=f"Archivo:[{formulario.vars.archivo}] no es un Comprobante de retención anual!"
 
     elif formulario.errors:
         response.flash = 'el formulario tiene errores'
-
-
     return locals() #dict(formulario=formulario)
 
 def Verificar(archivo):
+    return True
     from os.path import join as UNIR
     archivo=UNIR(request.folder,"uploads",archivo)
+    print (archivo)
     arch=open(archivo,"rb")
-    datos=arch.read(300)
+
+    datos=arch.read(310)
     arch.close()
     salida=False
     datos=datos.decode("latin-1")
-    print ("Verifcar",datos)
-
-    #Modificacion lectura de PDF
-    if datos.find ('%PDF')==0: return True
-    #######----####
+    datos=datos[293:295]
     if datos=="NQ" or datos=="LV" or datos=="LC"  or datos=="PQ":salida=True
     return salida
 
 #ajax
 def BuscarCorreoEnviado():
-    return (BuscarEnClientes(3))
+    modulos=db(db.tbl_modulo.ambiente=='retencionanual.amb').select().first()
+    return (BuscarEnClientes(modulos.id))
 
 
 def guardarCorreo():
@@ -164,8 +153,10 @@ def guardarCorreo():
     return salida
 
 def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
+    modulos=db(db.tbl_modulo.ambiente=='retencionanual.amb').select().first()
+
     consulta=db.tbl_recepcion.estado==estado
-    consulta &=db.tbl_recepcion.tipdoc==4
+    consulta &=db.tbl_recepcion.tipdoc==modulos.id
 
     consulta = db(consulta).select(orderby=db.tbl_recepcion.estado)
     if consulta==None:
@@ -175,12 +166,13 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
 
     if estado == "E":
         tabla.append (THEAD(TR(
-                        TH(),TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Empleado"),TH("Valor"),TH("Accion")
+                        TH(),TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Proveedor"),TH("Valor"),TH("Accion")
                         )))
     elif estado == "C":
         tabla.append (THEAD(TR(
-                    TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Empleado"),TH("Valor"),
-                    TH("Accion"))))
+                    TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Proveedor"),TH("Valor"),
+                    TH("Accion")
+                    )))
 
     cuerpo=TBODY()
     for item in consulta:
@@ -229,71 +221,66 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
                     _id=f"fila_c-{item.id}", _name=f"fila_c-{item.id}",)
                 )
     tabla.append(cuerpo)
-    tabla=DIV(DIV(H4(CENTER(titulo), botones if botones else "",_class="text-white"), _class="card-header {}".format(color)),
-            DIV(tabla, _class="card-body"),
+    tabla=DIV(DIV(DIV(titulo, _class="align-self-center"),
+                  DIV(botones if botones else ""  , _class="align-self-end"),
+                  _class="card-header {} text-white".format(color)),
+            DIV(
+                DIV(tabla, _class='scrollable1panel'),
+                _class="card-body"),
                 _class="card table-responsive")
     salida =XML(tabla)
     return salida
 
 #ajax
 def ReenvioCorreo():
-    idrecepcion=request.vars.id_recepcion or None
-    if not idrecepcion: return "alert('Error ReenvioCorreo, No se ingreso indice');"
-    consulta=db(db.tbl_recepcion.id==idrecepcion).select().first()
-    if not consulta: return "alert('Error, registro no encontrado');"
+    id_recepcion=request.vars.id_recepcion or None
+    if not id_recepcion: return "alert('Error, no exite Proveedor');"
+    recepcion=db(db.tbl_recepcion.id==id_recepcion).select().first()
+    if recepcion==None:        return "Alert ('error no existe recepcion');"
+
+
     salida=DIV()
-    salida.append(fun_input("remail1","Email Principal","email@domininio.com",tipo="email", valor=consulta.id_cliente.correo1))
-    salida.append(fun_input("remail2","Email Copia"    ,"email@domininio.com",tipo="email", valor=consulta.id_cliente.correo2))
-    salida.append(fun_input("remail3","Email Copia","email@domininio.com",tipo="email", valor=consulta.id_cliente.correo3))
-    salida.append(fun_input("cambiar","Modificar el correos?",tipo="checkbox"))
+    salida.append(fun_input("remail","Email","email@domininio.com",tipo="email", valor=recepcion.id_cliente.correo1))
+    salida.append(fun_input("cambiar","Modificar el correo Principal?",tipo="checkbox"))
     salida="$('#modalCuepo').html('{}');".format(XML(salida))
     salida+="$('#modalEncabezado').html('Reenvio Correo');"
-    botones =XML(A("Reenviar",_class="btn btn-success text-white", _onclick="ajax('{}',['remail1','remail2','remail3','cambiar'],':eval');".format(URL("ReenvioCorreoGuadar",vars=dict(idrecepcion=idrecepcion)))))
+
+
+    botones =XML(A("Reenviar",_class="btn btn-success text-white",
+                    _onclick="ajax('{}',['remail','cambiar'],':eval');".format(URL("ReenvioCorreoGuadar",vars=dict(id_recepcion=id_recepcion)))
+                    ))
     botones +='<button type="button" id="bntcerrar" name=="bntcerrar" class="btn btn-secondary text-white" data-dismiss="modal">Cerrar</button>'
     salida+="$('#modalPie').html('{}');".format(botones)
     return salida
 
 #ajax ^
 def ReenvioCorreoGuadar():
-    idrecepcion=request.vars.idrecepcion or None
-    correo1=request.vars.remail1 or None
-    correo2=request.vars.remail2 or None
-    correo3=request.vars.remail3 or None
+    id_recepcion=request.vars.id_recepcion or None
+    correo=request.vars.remail or None
     cambiar=request.vars.cambiar or  None
     salida=""
 
-    if correo1==None or es_correo_valido(correo1)==False:
-        salida= '''alert('Uno se ha ingresado el correo principal !!!');
+
+    if correo==None or es_correo_valido(correo)==False:
+        salida= '''alert('Uno se ha ingresado el correo !!!');
                         $('#remail').focus();
                         var p = $('#remail').css("background-color", 'yellow');
                         p.hide(1500).show(1500);'''
 
-    consulta=db(db.tbl_recepcion.id==idrecepcion).select().first()
+    consulta=db(db.tbl_recepcion.id==id_recepcion).select().first()
     if cambiar:
-        cliente=db(db.tbl_cliente.id==consulta.id_cliente).select().first()
-        cliente.update_record(correo1=correo1)
-        if es_correo_valido(correo2):            cliente.update_record(correo2=correo2)
-        if es_correo_valido(correo3):            cliente.update_record(correo3=correo3)
-        db.commit()
-
-    paraserver=4##VerificarModulo("retencionanual_enterprice.amb")#ojo aqui se debe cambiar
-
+        db(db.tbl_cliente.id==consulta.id_cliente).update(correo1=correo)
 
 
     tarea = planificador.queue_task(fun_EnviarCorreo,
-                                    pvars=dict(envio = idrecepcion, correo=correo1, paraserver=paraserver),#paraserver = Parametro servidor o Modulo...!
+                                    pvars=dict(envio = id_recepcion, correo=correo,paraserver=VerificarModulo("retencionanual.amb")),
                                     timeout = 360)
-
-    print (tarea,idrecepcion,correo1)
-
     if tarea:
         consulta.tarea=tarea.id
         consulta.update_record()
-        salida+=f"alert('Proceso encolado:{tarea.id}');"
+        salida+=f"alert('Correo Enviado');"
 
     return XML(salida)
-
-
 #ajax
 def enviocorreo():
     envios=request.vars.selenvio
@@ -302,7 +289,7 @@ def enviocorreo():
     salida =""
     for envio in envios:
         tarea = planificador.queue_task(fun_EnviarCorreo,
-                                        pvars=dict(envio = envio),
+                                        pvars=dict(envio = envio,paraserver=VerificarModulo("retencionanual.amb")),
                                         timeout = 360)
         salida +='''tabla_pendiente.row( $('#fila_e-{}') ).remove().draw();'''.format(envio)
         consulta=db(db.tbl_recepcion.id==envio).select().first()
@@ -324,18 +311,4 @@ def verpdf():
     '''verpdf entrega el archivo pdf en stream para se visualido en pantalla'''
     id_recepccion=request.vars.idpdf
     salida = F2s_VerPDF(id_recepccion)
-    return salida
-
-#ajax
-def noenviocorreo():
-    envios=request.vars.selenvio
-    if isinstance(envios,str):
-        envios=[envios]
-    salida =""
-    if envios==None: return("alert('No se ha Seleccionado documento');")
-    #return("alert('{}');".format(envios[0]))
-
-    for envio in envios:
-        db(db.tbl_recepcion.id==envio).update(estado="T",fechaenvio=request.now)
-        salida +='''tabla_pendiente.row( $('#fila_e-{}') ).remove().draw();'''.format(envio)
     return salida

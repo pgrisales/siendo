@@ -396,8 +396,5 @@ if __name__ =="__main__":
     print ("inicio")
     temp="/home/marco/workspace/virtualenv3/py3Facil/desarrollo/trabajo"
     ob=ObjFacil(temp)
-    ob.AbrirAmbiente("temporal.amb")
+    ob.AbrirAmbiente('retencion_dian.amb')
     print (ob.getEncabezado())
-    print (ob.getEncabezado("iddoc"))
-    print (ob.getEncabezado("falso"))
-    print (ob.getSelector())

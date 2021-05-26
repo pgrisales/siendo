@@ -15,8 +15,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="RETENCION POR IVA.svg"
-   inkscape:export-filename="/home/marco/Clientes/maquitodo/trabajo/formatos/ReteIVA.png"
+   sodipodi:docname="reteiva.svg"
+   inkscape:export-filename="/home/marco/Clientes/Solucionenlinea/siendo/trabajo/formatos/reteiva.png"
    inkscape:export-xdpi="150"
    inkscape:export-ydpi="150">
   <defs
@@ -52,18 +52,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.63928679"
-     inkscape:cx="433.92131"
-     inkscape:cy="107.63655"
+     inkscape:zoom="1.5228539"
+     inkscape:cx="385.82619"
+     inkscape:cy="345.17722"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
      width="11.5in"
      inkscape:window-width="1366"
-     inkscape:window-height="704"
+     inkscape:window-height="716"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true" />
@@ -75,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -252,34 +252,6 @@
        rx="3.1002355" />
     <flowRoot
        xml:space="preserve"
-       id="flowRoot4775"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12067926"
-       transform="matrix(0.23609192,0,0,0.23609192,64.574467,137.4089)"><flowRegion
-         id="flowRegion4777"
-         style="font-size:14.66666698px;stroke-width:1.12067926"><rect
-           id="rect4779"
-           width="444.08163"
-           height="33.092621"
-           x="161.1931"
-           y="198.14128"
-           style="font-size:14.66666698px;stroke-width:1.12067926" /></flowRegion><flowPara
-         id="flowPara4781"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.33333397px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#000080;stroke-width:1.12067926">CERTIFICADO DE RETENCION POR IVA</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot4775-4"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12067926"
-       transform="matrix(0.23609192,0,0,0.23609192,133.2489,146.60233)"><flowRegion
-         id="flowRegion4777-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926"><rect
-           id="rect4779-9"
-           width="273.28101"
-           height="50.172684"
-           x="161.1931"
-           y="198.14128"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926" /></flowRegion><flowPara
-         id="flowPara4781-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">PERIODO</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
        id="flowRoot4807"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77952766"
        transform="matrix(0.26458333,0,0,0.26458333,4.2333334,163.12086)"><flowRegion
@@ -410,16 +382,7 @@
            y="198.14128"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926" /></flowRegion><flowPara
          id="flowPara4781-2-9-6-6-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333397px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">VALOR RETENIDO</flowPara></flowRoot>    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.30119136;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect4890-3"
-       width="40.874622"
-       height="13.380016"
-       x="157.89622"
-       y="192.91689"
-       rx="1.6589357"
-       ry="1.6589354" />
-    <flowRoot
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333397px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">VALOR RETENIDO</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4775-4-8-5-5"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12067926"
@@ -510,12 +473,7 @@
            y="198.14128"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926" /></flowRegion><flowPara
          id="flowPara4781-2-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">Fecha de Expedición:</flowPara></flowRoot>    <path
-       style="fill:none;stroke:#000000;stroke-width:0.30148074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 157.83465,198.45478 h 40.70756"
-       id="path5129"
-       inkscape:connector-curvature="0" />
-    <flowRoot
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">Fecha de Expedición:</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3880"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.1594857"
@@ -608,5 +566,47 @@
         </g>
       </g>
     </g>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4775-4"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12067926"
+       transform="matrix(0.23609192,0,0,0.23609192,132.88463,145.31009)"><flowRegion
+         id="flowRegion4777-7"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926"><rect
+           id="rect4779-9"
+           width="273.28101"
+           height="50.172684"
+           x="161.1931"
+           y="198.14128"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926" /></flowRegion><flowPara
+         id="flowPara4781-2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.12067926">PERIODO</flowPara></flowRoot>    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.30119136;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect4890-3"
+       width="40.874626"
+       height="13.380016"
+       x="157.53142"
+       y="191.62465"
+       rx="1.6589358"
+       ry="1.6589354" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.30148074px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 157.47038,197.16254 h 40.70756"
+       id="path5129"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4775"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12067926"
+       transform="matrix(0.23609192,0,0,0.23609192,63.208097,136.91096)"><flowRegion
+         id="flowRegion4777"
+         style="font-size:14.66666698px;stroke-width:1.12067926"><rect
+           id="rect4779"
+           width="444.08163"
+           height="33.092621"
+           x="161.1931"
+           y="198.14128"
+           style="font-size:14.66666698px;stroke-width:1.12067926" /></flowRegion><flowPara
+         id="flowPara4781"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.33333397px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#000080;stroke-width:1.12067926">CERTIFICADO DE RETENCION POR IVA</flowPara></flowRoot>  </g>
 </svg>

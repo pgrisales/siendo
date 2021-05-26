@@ -72,7 +72,7 @@ class ObjPartirDoc():
 		haysalto=False
 		for salto in self.saltopag:
 			buscar=linea.find(salto)
-			#print ("salto:",buscar, salto)
+			print ("salto:",buscar, salto)
 			if buscar >-1:
 				while buscar >-1:
 					salida.append(linea[:buscar])
@@ -204,8 +204,6 @@ class ObjPartirDoc():
 			if act_total:
 				haysalto, salida = self.BuscarFinPag(linea)
 				if not haysalto:
-
-
 					if self.moverlineas:
 						for moverlineas in self.moverlineas:
 							#print (moverlineas)
@@ -301,7 +299,9 @@ class ObjPartirDoc():
 							continue
 			#Salto de pagina con texto:
 			haysalto, salida = self.BuscarFinPag(linea)
+			print (linea)
 			if haysalto:
+				
 				temp=salida.pop()
 				arcsalida.write(temp.encode('latin-1') )
 				if self.prueba:	print(f"{nrolinea}   {temp [:-1]}")

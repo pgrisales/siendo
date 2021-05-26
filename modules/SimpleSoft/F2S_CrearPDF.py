@@ -4,7 +4,7 @@ import os
 import pickle
 
 from PyPDF2 import PdfFileWriter, PdfFileReader
-from reportlab.lib.styles import ParagraphStyle 
+from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.pagesizes import letter
 from reportlab.graphics import renderPDF
@@ -20,8 +20,10 @@ from reportlab.pdfgen import canvas
 from datetime import datetime
 import calendar
 
-
-import SimpleSoft.F2S_CodigoBarras as f2s_cod128
+try:
+    import SimpleSoft.F2S_CodigoBarras as f2s_cod128
+except Exception as e:
+    import F2S_CodigoBarras as f2s_cod128
 
 
 
@@ -90,7 +92,7 @@ class objF2S_PDF():
                 desx=datos["desp_x"] if "desp_x" in datos else 0
                 desy=datos["desp_y"] if "desp_y" in datos else 0
                 desy= desy * -1
-                
+
                 posx=posx + margenX
 
 
@@ -141,7 +143,7 @@ class objF2S_PDF():
                 codigo="(415){}(8020){:06}{:08}(3900){:010}(96){}".format(self.codiac,codigocliente,nrocuenta,valorcod,fechacod)
                 pdf_f2s.drawCentredString(198 + margenX, 40, codigo)
 
-                posy=50 
+                posy=50
                 posx=10 + margenX
                 codigobar=f2s_cod128.code128_image (chr(102)+codigo)
                 pdf_f2s.drawImage(ImageReader(codigobar),posx,posy,width=380, height=60)
@@ -153,7 +155,7 @@ class objF2S_PDF():
                 margenX=0
             else:
                 margenX = 5.5 * inch
-        
+
         pdf_f2s.save()
 
     def Parrafo(self,datos, pdf_f2s):
@@ -181,7 +183,7 @@ class objF2S_PDF():
                 pdfmetrics.registerFont(TTFont(tipo[0],ruta))
 
     def LeerPagina(self, pagina):
-        """ 
+        """
         Buscar la pagina con los datos extraidos desde F2S_ExtraerPDF, y entrega la lectura.
         """
 
@@ -191,5 +193,3 @@ class objF2S_PDF():
         datos=pickle.load(pickled_file)
         pickled_file.close()
         return datos
-
- 

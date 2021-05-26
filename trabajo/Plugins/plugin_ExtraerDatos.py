@@ -6,8 +6,8 @@ N-12963889-8
 """
 
 def plugin_main(*args, **kwargs):
-    # print ('args  : ',args)
-    # print ('kwargs: ',kwargs)
+    print ('args  : ',args)
+    print ('kwargs: ',kwargs)
     texto = kwargs['texto'][0]
     separador=kwargs['separador']
     indice=kwargs['indice']

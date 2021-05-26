@@ -5,7 +5,11 @@ import calendar
 import logging
 from datetime import datetime
 
-import SimpleSoft.F2S_CodigoBarras as f2s_cod128
+try:
+    import SimpleSoft.F2S_CodigoBarras as f2s_cod128
+except Exception as e:
+    import F2S_CodigoBarras as f2s_cod128
+
 
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.lib.styles import ParagraphStyle
@@ -106,7 +110,7 @@ class objF2S_PDF():
                 pdf_f2s.translate(pagina['pag_despx'] *inch, tam[1] - ((pagina['pag_despy'] *inch) + alto_imagen)  )
                 formato.wrapOn(pdf_f2s, formato.drawWidth, formato.drawHeight)
                 formato.drawOn(pdf_f2s, 0 , 0)
-                #self.Grilla(pdf_f2s,tam)
+                self.Grilla(pdf_f2s,tam)
 
 
                 for campo in pagina["campos"]:

@@ -7,9 +7,11 @@ def index():
     modulos=db(db.tbl_modulo.id==1).select().first()
     if modulos==None:
         raise HTTP(400)
-    bntEnvio=A("Envio Correo",_class="btn btn-success",
-            _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
-        )
+    bntEnvio=DIV(A("Envio Correo",_class="btn btn-success",
+                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
+            ),"|",A("No Envio",_class="btn btn-danger",
+                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('noenviocorreo'))))
+            )
     pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo")
     envios=fun_pendiente("E","Pendientes para envio Correo","bg-primary","tabla_pendiente", bntEnvio)
     BtnGuardar=A("Guardar", _class="btn btn-primary",
@@ -317,4 +319,18 @@ def verpdf():
     '''verpdf entrega el archivo pdf en stream para se visualido en pantalla'''
     id_recepccion=request.vars.idpdf
     salida = F2s_VerPDF(id_recepccion)
+    return salida
+
+#ajax
+def noenviocorreo():
+    envios=request.vars.selenvio
+    if isinstance(envios,str):
+        envios=[envios]
+    salida =""
+    if envios==None: return("alert('No se ha Seleccionado documento');")
+    #return("alert('{}');".format(envios[0]))
+
+    for envio in envios:
+        db(db.tbl_recepcion.id==envio).update(estado="T",fechaenvio=request.now)
+        salida +='''tabla_pendiente.row( $('#fila_e-{}') ).remove().draw();'''.format(envio)
     return salida

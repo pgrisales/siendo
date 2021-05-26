@@ -45,7 +45,7 @@ def RegistroRecepcion (idcliente, nrodoc, valor, fecha, correo, nombrepdf,modulo
     if not  db(db.tbl_recepcion.nrodoc==nrodoc).isempty():
         #Falta borrar el pdf creado
         ruta=JOIN(request.folder,'static','PDF',nombrepdf)
-        print ('borrar', ruta)
+        print ('RegistroRecepcion:borrar no llego nrodoc', ruta)
         try:
             REMOVE(ruta)
         except Exception as e:
@@ -66,9 +66,6 @@ def RegistroRecepcion (idcliente, nrodoc, valor, fecha, correo, nombrepdf,modulo
                     )
     db.commit()
 
-
-
-
 def GenerarPDF(archivo, modulo, fecha_arreglo=None):
     #gGuarda la generacion de pdf en Web2py
     from os import makedirs
@@ -83,17 +80,14 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
     from SimpleSoft.F2S_filascol 	import ObjFilas
 
     modulo = VerificarModulo(modulo)
-
     #print (f"modulo {modulo}")
     #print (f'archivo {archivo}')
-
     novedad=[]
-
     idmodulo=db(db.tbl_modulo.id==modulo).select().first()
     rutarecursos=UNIR(request.folder,"trabajo")
     archivo=UNIR(request.folder,"uploads",archivo)
 
-    ob=ObjFacil( rutarecursos )
+    ob=ObjFacil( rutarecursos)
     ob.AbrirAmbiente(idmodulo.ambiente)
     print (ob.encabezado['modo'],archivo,rutarecursos)
 
@@ -103,6 +97,24 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
         print ('siguiente')
         for campo in docuementos:
             print (campo)
+            if not 'valor_total' in campo:
+                campo['valor_total']=0
+
+            idcliente, correo =VerificarCliente(campo['nit'] ,campo['entregadoa'])
+            RegistroRecepcion (idcliente, campo['nrodoc'], campo['valor_total'],
+                         campo['fecha'], correo, campo['nombrepdf'] ,idmodulo)
+
+
+        return 'Generando pdf'
+
+    if ob.encabezado['modo']==5:
+        docuementos  = ProcesarEntradaPDF2(rutarecursos, archivo, ob.encabezado)
+        print ('siguiente')
+        for campo in docuementos:
+            print (campo)
+            if not 'valor_total' in campo:
+                campo['valor_total']=0
+
             idcliente, correo =VerificarCliente(campo['nit'] ,campo['entregadoa'])
             RegistroRecepcion (idcliente, campo['nrodoc'], campo['valor_total'],
                          campo['fecha'], correo, campo['nombrepdf'] ,idmodulo)
@@ -129,7 +141,8 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
         print (f"Crear Nueva Ruta : {ruta_pdf}")
         makedirs(ruta_pdf)
 
-
+    mover=[]
+    borrar=[]
 
     for campo in campos:
         #Si el nit no viene, se da el nombre de usuario..... Esto se debe a Comprobante de pago Para Cliente Dian si nit()!!!!
@@ -163,27 +176,38 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
         if documento:   #Si existe el documento no lo inserta
             print (f"Existe Registro del {id_cliente} - {campo['nrodoc']} para el usuario id {campo['nit']}")
             buscar_archivo=UNIR("/home/www-data/web2py",request.folder,"static",documento.rutapdf)#ruta_Destino
+            buscar_archivo=buscar_archivo.replace(',','')
             print (f"ruta en base:{buscar_archivo}")
             if not isfile(buscar_archivo):
                 print (f"no exite archivo se Reemplaza por el campo: {campo['pdf']}")
-                MOVER(campo["pdf"], buscar_archivo)
+                mover.append((campo["pdf"], buscar_archivo))
+
+                # try:
+                #     MOVER(campo["pdf"], buscar_archivo)
+                #
+                # except Exception as e:
+                #     print ('!'*20)
+                #     print (e)
+                #     print ('!'*20)
             else:
                 print("Borrar por que existe!!")
-                try:
-                    BORRAR(campo["pdf"])#ruta_de_ubicacion_PDF_cuando_se_Genera...
-                except:
-                    pass
+                borrar.append(campo["pdf"])
+                # try:
+                #     BORRAR(campo["pdf"])#ruta_de_ubicacion_PDF_cuando_se_Genera...
+                # except:
+                #     pass
 
             continue
         #Mover el pdf al sitio de web2py
         #1 Craar si no existe la ruta
         tempo=PARTIR(campo["pdf"])
-
         nuevaruta=UNIR(ruta_pdf,"{}".format(tempo[-1]) )
         #Eliminar Espacion en blanco
         nuevaruta=nuevaruta.replace(" ","_")
         print (f"origen:{campo['pdf']}")
-        MOVER(campo["pdf"], nuevaruta)
+        #MOVER(campo["pdf"], nuevaruta)
+        mover.append((campo["pdf"], nuevaruta))
+
         #Verificar Correo
         estado="C"
         #Si tiene correo lo coloca en estado para enviar= E
@@ -210,6 +234,25 @@ def GenerarPDF(archivo, modulo, fecha_arreglo=None):
                             tipdoc=modulo,
                         )
         db.commit()
+
+    if 'anexarpdf' in ob.encabezado:
+        print ('x'*80)
+        print ('Anexar PDF')
+        print ('x'*80)
+
+
+    for item in mover:
+        try:
+            MOVER(item[0], item[1])
+        except Exception as e:
+            print (e)
+    for item in borrar:
+        try:
+            BORRAR(item[0])
+        except Exception as e:
+            print (e)
+
+
     print(f"Total con Coreo:{totalE}")
     print(f"Total sin Coreo:{totalC}")
     return novedad
@@ -220,7 +263,7 @@ def fun_EnviarCorreo(envio, correo=None, paraserver=1):
     from gluon.tools import Mail
     from os.path import join as UNIR
 
-    print (correo, paraserver)
+    print ('fun_EnviarCorreo:',correo, paraserver)
 
     mail = Mail()
     servercorreo=db(db.tbl_parametros.id_modulo==paraserver).select().first()
@@ -342,6 +385,31 @@ def F2s_VerPDF(id_recepccion):
 def ProcesarEntradaPDF(rutarecursos, archivo, ambiente):
     '''Lee los datos de un pdf, y los envia al ambiente. '''
     from SimpleSoft.F2S_ExtraerPDF2 import ObjPDF
+    ob=ObjPDF(  archpdf = archivo,
+                    ruta_recursos=rutarecursos,
+                    ambiente = ambiente,
+                    ruta_app=request.folder,
+                    debug= False
+                )
+    if ob.error:
+        print ('eeeeeerrrrrooooorrr')
+        return
+
+    ob.VistaPdf()
+    print ('*'*50)
+    salida =ob.Procesar()
+    # print (ob.Procesar())
+    salida=[]
+    for i in ob.documentos:
+        #print (ob.documentos[i]['camposweb2py'])
+        salida.append(ob.documentos[i]['camposweb2py'])
+    # print (ob.documentos['1']['datos'].campos)
+    # print (ob.documentos['10']['datos'].campos)
+    return salida
+
+def ProcesarEntradaPDF2(rutarecursos, archivo, ambiente):
+    '''Lee los datos de un pdf, y los envia al ambiente. '''
+    from SimpleSoft.F2S_ExtraerPDF3 import ObjPDF
     ob=ObjPDF(  archpdf = archivo,
                     ruta_recursos=rutarecursos,
                     ambiente = ambiente,

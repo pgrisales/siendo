@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-#
+# ---
 @auth.requires(lambda: auth.has_membership ('Gerencia') or auth.has_membership('Administradores') or auth.has_membership ('Super') )
 def index():
     posicion_tab=request.vars.posicion_tab or 1
     tarea=0
-    modulos=db(db.tbl_modulo.id==4).select().first()
+    modulos=db(db.tbl_modulo.id==5).select().first()
     if modulos==None:
-        raise HTTP(404)
-
+        raise HTTP(400)
     bntEnvio=DIV(A("Envio Correo",_class="btn btn-success",
                 _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
             ),"|",A("No Envio",_class="btn btn-danger",
@@ -26,7 +25,7 @@ def index():
                                 LABEL("Fecha Final", _class="col-sm-1 col-form-label"),
                                 DIV(INPUT(_type="date",_class="form-control", _id="fecha_final",
                                 _name="fecha_final"),_class="col-sm-2"),
-                                LABEL("CC/Nombre", _class="col-sm-1 col-form-label"),
+                                LABEL("NIT/Proveedor", _class="col-sm-1 col-form-label"),
                                 DIV(INPUT(_class="form-control", _id="nit_correo",
                                 _name="nit_correo"),_class="col-sm-2"),
                                 A("Buscar",_class="btn btn-success",
@@ -39,20 +38,14 @@ def index():
     if formulario.process().accepted:
         response.flash = 'formulario aceptado'
         if Verificar(formulario.vars.archivo):
-            paraserver=VerificarModulo("retencionanual.amb")
             tarea=db.tbl_control_maestro.insert(
                 descripcion="Subir Archvo de Nomina",
                 funcion="Crear Pdf",
-                args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':{4}," + "}",
+                args="{" + f"'archivo': '{formulario.vars.archivo}','modulo':5," + "}",
                 estado= 'I')
-
-            # tarea = planificador.queue_task(GenerarPDF,
-            #                             pvars=dict(archivo = formulario.vars.archivo,modulo=3),
-            #                             )#timeout = 360)
-            # tarea = tarea.id
         else:
-            db.tbl_mensajes.insert(mensaje=f"Archivo:[{formulario.vars.archivo}] no es un CERTIFICADO DE RETENCION POR IVA!")
-            msgerror=f"Archivo:[{formulario.vars.archivo}] no es un CERTIFICADO DE RETENCION POR IVA!"
+            db.tbl_mensajes.insert(mensaje=f"Archivo:[{formulario.vars.archivo}] no es un Comprobante de egreso!")
+            msgerror=f"Archivo:[{formulario.vars.archivo}] no es un Comprobante de egreso!"
 
     elif formulario.errors:
         response.flash = 'el formulario tiene errores'
@@ -63,22 +56,25 @@ def index():
 def Verificar(archivo):
     from os.path import join as UNIR
     archivo=UNIR(request.folder,"uploads",archivo)
+    print (archivo)
     arch=open(archivo,"rb")
-    datos=arch.read(300)
+    datos=arch.read(500)
     arch.close()
     salida=False
     datos=datos.decode("latin-1")
-    print ("Verifcar",datos)
 
     #Modificacion lectura de PDF
     if datos.find ('%PDF')==0: return True
     #######----####
-    if datos=="NQ" or datos=="LV" or datos=="LC"  or datos=="PQ":salida=True
+    control=['CERTIFICADO DE INGRESOS Y RETENCIONES POR RENTAS DE TRABAJO Y DE PENSIONES']
+    for item in control:
+        if datos.find(item)>-1:salida=True
+
     return salida
 
 #ajax
 def BuscarCorreoEnviado():
-    return (BuscarEnClientes(3))
+    return (BuscarEnClientes(1))
 
 
 def guardarCorreo():
@@ -165,7 +161,7 @@ def guardarCorreo():
 
 def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
     consulta=db.tbl_recepcion.estado==estado
-    consulta &=db.tbl_recepcion.tipdoc==4
+    consulta&=db.tbl_recepcion.tipdoc==5
 
     consulta = db(consulta).select(orderby=db.tbl_recepcion.estado)
     if consulta==None:
@@ -175,12 +171,13 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
 
     if estado == "E":
         tabla.append (THEAD(TR(
-                        TH(),TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Empleado"),TH("Valor"),TH("Accion")
+                        TH(),TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Proveedor"),TH("Valor"),TH("Accion")
                         )))
     elif estado == "C":
         tabla.append (THEAD(TR(
-                    TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Empleado"),TH("Valor"),
-                    TH("Accion"))))
+                    TH("Nro.Doc"),TH("Fecha"),TH("NIT"),TH("Nombre Proveedor"),TH("Valor"),
+                    TH("Accion")
+                    )))
 
     cuerpo=TBODY()
     for item in consulta:
@@ -203,7 +200,6 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
                                         **{'data-toggle':"tooltip", "data-placement":"top"})
                             ),
                             _id=f"fila_e-{item.id}", _name=f"fila_e-{item.id}",_align="center"
-
                             ))
         elif item.estado =="C":
             cuerpo.append(TR(
@@ -276,15 +272,10 @@ def ReenvioCorreoGuadar():
         if es_correo_valido(correo3):            cliente.update_record(correo3=correo3)
         db.commit()
 
-    paraserver=4##VerificarModulo("retencionanual_enterprice.amb")#ojo aqui se debe cambiar
-
-
-
     tarea = planificador.queue_task(fun_EnviarCorreo,
-                                    pvars=dict(envio = idrecepcion, correo=correo1, paraserver=paraserver),#paraserver = Parametro servidor o Modulo...!
+                                    pvars=dict(envio = idrecepcion, correo=correo1, paraserver=5),
                                     timeout = 360)
 
-    print (tarea,idrecepcion,correo1)
 
     if tarea:
         consulta.tarea=tarea.id
@@ -292,8 +283,6 @@ def ReenvioCorreoGuadar():
         salida+=f"alert('Proceso encolado:{tarea.id}');"
 
     return XML(salida)
-
-
 #ajax
 def enviocorreo():
     envios=request.vars.selenvio
@@ -313,11 +302,13 @@ def enviocorreo():
             consulta.update_record()
     return salida
 
+
 #ajax
 def estadosubir():
     tarea=request.vars.tarea or None
     salida = F2s_Estado(tarea)
     return salida
+
 
 #ajax
 def verpdf():

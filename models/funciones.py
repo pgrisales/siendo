@@ -62,6 +62,7 @@ def fun_Menu():
 					("fab fa-deploydog fa-xs", T('Comprobante de Pago a Empleados'), URL('compnomina', 'index')),
 					("fas fa-certificate fa-xs",T('Certificación de Retención por IVA'), URL('retiva', 'index')),
 					("fas fa-wallet fa-xs",T('Ret. Fuente, Ret. ICA'), URL('compretencionanual', 'index')),
+					("fas fa-wallet fa-xs",T('Retención Dian'), URL('comp_dian', 'index')),
  				)))
 	#if auth.has_membership("Proveedor") or auth.has_membership("Empleados") or auth.has_membership("Super"):
 	salida.append(itemmenus("DOCUMENTOS",(

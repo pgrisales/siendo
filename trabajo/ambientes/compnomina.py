@@ -25,6 +25,7 @@ encabezado={
 						"====================================================================================================================================",
 						"------------------------------------------------------------------------------------------------------------------------------------",
 						"-------------------- ",
+						"--------------",
 						"-------------",
 						),
 			'detallefijo':{"inicio":"CODIGO    N O M B R E ",
@@ -34,6 +35,7 @@ encabezado={
 					"lineas":26,
 					"largoEncabezado":5,			#Define nro de lineas que debe tener el encazado para que de hay en adelante inicie el detalle
 					},
+            'posdetalle':10,    #Linea posicion detalle, por defecto si no se incluye es 50
 
 			##"pos_salto":-1,
 			"saltolineadoc":3,										#Eliminar del inicio de documento un numero de lineas int(##)
@@ -41,11 +43,11 @@ encabezado={
 			  ###################################
 			 # Funciones Generales por agrupar #
 			###################################
-			"nombre_pdf":{"selector":[{"fila":9,"columnas":(1,15)},{"fila":1,"columnas":(23,49)}], #Nombre PDF, campos=[Pos Campos]
+			"nombre_pdf":{"selector":[{"fila":10,"columnas":(1,15)},{"fila":1,"columnas":(23,49)}], #Nombre PDF, campos=[Pos Campos]
 						  "formato":"comporbanteNomina-{0}_{1}",		#Toma el orden de cmapos y los acomoda.. Nota deben estar equilibrados
 						  "ruta_pdf":"/home/www-data/web2py/applications/siendo/static/PDF",	#Esta tambien sera la ruta
 						 },
-			"agrupar":{"fila":9,"columnas":(1,15)},			#Id de pagina simpre debe ir!!
+			"agrupar":{"fila":10,"columnas":(1,15)},			#Id de pagina simpre debe ir!!
 			  ###################################
 			 # Funciones Envio Correo web2py #
 			#################################
@@ -54,8 +56,8 @@ encabezado={
 							{"fila":1,  "columnas":(106,114),"nombre":"Fecha","convert":"fecha2"},
 							{"fila":1,  "columnas":(120,128),"nombre":"Fecha_Hasta","convert":"fecha2"},
 							{"fila":6, "columnas":(40,56),"nombre":"valor","convert":"float"},
-							{"fila":9,  "columnas":(1,15),"nombre":"nit"},		#El nombre debe ser el mismo nombre del campo en la base de datos
-							{"fila":9,  "columnas":(16,44),"nombre":"nombre"},
+							{"fila":10,  "columnas":(1,15),"nombre":"nit"},		#El nombre debe ser el mismo nombre del campo en la base de datos
+							{"fila":10,  "columnas":(15,44),"nombre":"nombre"},
 			],
 			}
 
@@ -72,14 +74,14 @@ selector=[
 			"desp_y":0,
 			"desp_x":0,
 			},
-			{"fila":9, "nombre":"Nombre Empleado",
+			{"fila":10, "nombre":"Nombre Empleado",
 			"columnas":(1,44),
 			"letra":"Ubuntu-Bold", "letra_alto":10, "posx":100, "posy":264.75, "alinear":"I",
 			"desp_y":0,
 			"desp_x":0,
 			},
 			{"fila":3, "nombre":"Cargo",
-			"columnas":(104,132),
+			"columnas":(104,127),
 			"letra":"Ubuntu", "letra_alto":9, "posx":413, "posy":264.75, "alinear":"I",
 			"desp_y":0,
 			"desp_x":0,
@@ -115,28 +117,28 @@ selector=[
 			"desp_x":0,
 			},
 			#Detalle
-			{"filas":(9,31), "nombre":"Concepto",
+			{"filas":(10,31), "nombre":"Concepto",
 			"columnas":(45,63),
 			"posx":55, "posy": 164, "alinear":"I",
 			"letra":"Ubuntu", "letra_alto":9,
 			"desp_y":9,
 			"desp_x":0,
 			},
-			{"filas":(9,31), "nombre":"Descripcion",
+			{"filas":(10,31), "nombre":"Descripcion",
 			"columnas":(64,89),
 			"posx":110, "posy": 164, "alinear":"I",
 			"letra":"Ubuntu", "letra_alto":9,
 			"desp_y":9,
 			"desp_x":0,
 			},
-			{"filas":(9,31), "nombre":"Cant. Horas",
+			{"filas":(10,31), "nombre":"Cant. Horas",
 			"columnas":(89,103),
 			"posx":322.9, "posy": 164, "alinear":"D",
 			"letra":"Ubuntu", "letra_alto":9,
 			"desp_y":9,
 			"desp_x":0,
 			},
-			{"filas":(9,31), "nombre":"Devengado",
+			{"filas":(10,31), "nombre":"Devengado",
 			"columnas":(103,117),
 			"posx":432.2, "posy": 164, "alinear":"D",
 			"letra":"Ubuntu", "letra_alto":9,
@@ -144,7 +146,7 @@ selector=[
 			"desp_x":0,
 			"fun_numero1":"{:,.0f}"
 			},
-			{"filas":(9,31), "nombre":"Deducido",
+			{"filas":(10,31), "nombre":"Deducido",
 			"columnas":(117,132),
 			"posx":538.91, "posy": 164, "alinear":"D",
 			"letra":"Ubuntu", "letra_alto":9,

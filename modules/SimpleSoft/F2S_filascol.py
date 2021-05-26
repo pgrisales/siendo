@@ -8,10 +8,17 @@ import logging
 import logging.config
 from uuid import uuid1
 from datetime import datetime
-from SimpleSoft.F2S_PagLogicas 	import ObjPagLog
-from SimpleSoft.F2S_CrearPDF2  	import objF2S_PDF
-from SimpleSoft.F2S_PartirSpool	import ObjPartirDoc
-from SimpleSoft.Facil 			import ObjFacil
+try:
+	from SimpleSoft.F2S_PagLogicas 	import ObjPagLog
+	from SimpleSoft.F2S_CrearPDF2  	import objF2S_PDF
+	from SimpleSoft.F2S_PartirSpool	import ObjPartirDoc
+	from SimpleSoft.Facil 			import ObjFacil
+
+except Exception as e:
+	from F2S_PagLogicas 	import ObjPagLog
+	from F2S_CrearPDF2  	import objF2S_PDF
+	from F2S_PartirSpool	import ObjPartirDoc
+	from Facil 		    	import ObjFacil
 
 logger = logging.getLogger(__name__)
 
@@ -92,6 +99,18 @@ class ObjFilas():
 		#print (fecha)
 		#print  (salida)
 		return salida
+
+	def Fun_Fecha6(self,fecha):
+		#ENERO        31 DEL 2020 entegar Año-Mes-Dia
+		print ('Fecha 6')
+		print (' *<>* '*20)
+		print (fecha)
+		salida = fecha.replace(' ','')
+		salida = salida.replace('|','-')
+		print (salida)
+		return salida
+
+
 
 	def Fun_SinGion(self,campo):
 		#deja solo el texto ante del sin_guion
@@ -306,6 +325,11 @@ class ObjFilas():
 					for selector in selector_pdf:
 						extraerlineas= lineas[ selector["fila"] -1 ]
 						temp = extraerlineas[selector["columnas"][0]-1:selector ["columnas"][1]-1 ]
+
+						temp=temp.strip()
+						temp=temp.replace(' ','_')
+						temp=temp.replace(',','')
+
 						texto.append(temp.strip())
 					#print (texto)
 					if len(texto)<1:
@@ -339,6 +363,9 @@ class ObjFilas():
 						buscar=campo.find(selector["hasta"])
 						campo=campo[:buscar]
 
+					if 'borrar' in selector:
+						campo=campo.replace(selector["borrar"],'')
+
 					if "convert" in selector:
 						if selector["convert"]=="float":
 							campo = campo.replace (",","")
@@ -356,6 +383,9 @@ class ObjFilas():
 							campo= self.Fun_Fecha3(campo.strip())
 						elif selector["convert"]=="fecha5":
 							campo= self.Fun_Fecha5(campo.strip())
+						elif selector["convert"]=="fecha6":
+							campo= self.Fun_Fecha6(campo.strip())
+
 						elif selector["convert"]=="sin_guion":
 							campo= self.Fun_SinGion(campo.strip())
 

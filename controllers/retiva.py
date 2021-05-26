@@ -8,9 +8,12 @@ def index():
     if modulos==None:
         raise HTTP(404)
 
-    bntEnvio=A("Envio Correo",_class="btn btn-success",
-            _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
-        )
+    bntEnvio=DIV(A("Envio Correo",_class="btn btn-success",
+                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('enviocorreo')))
+            ),"|",A("No Envio",_class="btn btn-danger",
+                _onclick="ajax('{}',['selenvio'],':eval');".format(URL(('noenviocorreo'))))
+            )
+
     pendientes=fun_pendiente("C","Pendientes sin Correo","bg-danger", "tabla_sincorreo")
     envios=fun_pendiente("E","Pendientes para envio Correo","bg-primary","tabla_pendiente", bntEnvio)
     BtnGuardar=A("Guardar", _class="btn btn-primary",
@@ -96,7 +99,7 @@ def guardarCorreo():
     #Valida correos
     if not es_correo_valido(correo1):
         salida='''
-                alert('Correo no valido!!!');
+                alert('Correo no valido !!!');
                 $('#correo1').focus();
                 var p = $("#correo1").css("background-color", "yellow");
                 p.hide(1500).show(1500);
@@ -138,6 +141,7 @@ def guardarCorreo():
         db(db.auth_user.id==cliente.id_usuario).update(email=correo1)
         nit =cliente.nit
         nombre=cliente.nombre
+
 
         boton=SPAN ( A(I(" ",_class="far fa-file-pdf"),_class="btn btn-sm btn-danger btn-circle  text-white",
                     _onclick="ajax('{}',['superid'],':eval');$('#visorPDF').modal('show');".format(URL("verpdf",vars=dict(idpdf=idusr)))),
@@ -233,52 +237,64 @@ def fun_pendiente(estado,titulo,color="bg-primary",idtabla="",botones=None):
     salida =XML(tabla)
     return salida
 
-#ajax
 def ReenvioCorreo():
-    idproveedor=request.vars.id_user or None
-    if not idproveedor: return "alert('Error, no exite Empleado');"
-    consulta=db(db.tbl_cliente.id==idproveedor).select().first()
+    idrecepcion=request.vars.id_recepcion or None
+    if not idrecepcion: return "alert('Error ReenvioCorreo, No se ingreso indice');"
+    consulta=db(db.tbl_recepcion.id==idrecepcion).select().first()
     if not consulta: return "alert('Error, registro no encontrado');"
     salida=DIV()
-    salida.append(fun_input("remail","Email","email@domininio.com",tipo="email", valor=consulta.correo1))
-    salida.append(fun_input("idproveedor","",tipo="hidden",valor=idproveedor ))
-    salida.append(fun_input("cambiar","Modificar el correo Principal?",tipo="checkbox"))
+    salida.append(fun_input("remail1","Email Principal","email@domininio.com",tipo="email", valor=consulta.id_cliente.correo1))
+    salida.append(fun_input("remail2","Email Copia"    ,"email@domininio.com",tipo="email", valor=consulta.id_cliente.correo2))
+    salida.append(fun_input("remail3","Email Copia","email@domininio.com",tipo="email", valor=consulta.id_cliente.correo3))
+    salida.append(fun_input("cambiar","Modificar el correos?",tipo="checkbox"))
     salida="$('#modalCuepo').html('{}');".format(XML(salida))
     salida+="$('#modalEncabezado').html('Reenvio Correo');"
-    botones =XML(A("Reenviar",_class="btn btn-success text-white", _onclick="ajax('{}',['idproveedor','remail','cambiar'],':eval');".format(URL("ReenvioCorreoGuadar"))))
+    botones =XML(A("Reenviar",_class="btn btn-success text-white", _onclick="ajax('{}',['remail1','remail2','remail3','cambiar'],':eval');".format(URL("ReenvioCorreoGuadar",vars=dict(idrecepcion=idrecepcion)))))
     botones +='<button type="button" id="bntcerrar" name=="bntcerrar" class="btn btn-secondary text-white" data-dismiss="modal">Cerrar</button>'
     salida+="$('#modalPie').html('{}');".format(botones)
-    #salida+="alert('que');"
     return salida
 
 #ajax ^
 def ReenvioCorreoGuadar():
-    idenvio=request.vars.idproveedor or None
-    correo=request.vars.remail or None
+    idrecepcion=request.vars.idrecepcion or None
+    correo1=request.vars.remail1 or None
+    correo2=request.vars.remail2 or None
+    correo3=request.vars.remail3 or None
     cambiar=request.vars.cambiar or  None
     salida=""
 
-
-    if correo==None or es_correo_valido(correo)==False:
-        salida= '''alert('Uno se ha ingresado el correo !!!');
+    if correo1==None or es_correo_valido(correo1)==False:
+        salida= '''alert('Uno se ha ingresado el correo principal !!!');
                         $('#remail').focus();
                         var p = $('#remail').css("background-color", 'yellow');
                         p.hide(1500).show(1500);'''
 
-    consulta=db(db.tbl_recepcion.id==idenvio).select().first()
+    consulta=db(db.tbl_recepcion.id==idrecepcion).select().first()
     if cambiar:
-        db(db.tbl_cliente.id==consulta.id_cliente).update(correo1=correo)
+        cliente=db(db.tbl_cliente.id==consulta.id_cliente).select().first()
+        cliente.update_record(correo1=correo1)
+        if es_correo_valido(correo2):            cliente.update_record(correo2=correo2)
+        if es_correo_valido(correo3):            cliente.update_record(correo3=correo3)
+        db.commit()
+
+    paraserver=VerificarModulo("reteiva_enterprice.amb")#ojo aqui se debe cambiar
+
+
 
     tarea = planificador.queue_task(fun_EnviarCorreo,
-                                    pvars=dict(envio = idenvio, correo=correo),
+                                    pvars=dict(envio = idrecepcion, correo=correo1, paraserver=paraserver),#paraserver = Parametro servidor o Modulo...!
                                     timeout = 360)
+
+    print (tarea,idrecepcion,correo1)
+
     if tarea:
         consulta.tarea=tarea.id
         consulta.update_record()
         salida+=f"alert('Proceso encolado:{tarea.id}');"
 
     return XML(salida)
-#ajax
+
+
 def enviocorreo():
     envios=request.vars.selenvio
     if isinstance(envios,str):
@@ -308,4 +324,18 @@ def verpdf():
     '''verpdf entrega el archivo pdf en stream para se visualido en pantalla'''
     id_recepccion=request.vars.idpdf
     salida = F2s_VerPDF(id_recepccion)
+    return salida
+
+#ajax
+def noenviocorreo():
+    envios=request.vars.selenvio
+    if isinstance(envios,str):
+        envios=[envios]
+    salida =""
+    if envios==None: return("alert('No se ha Seleccionado documento');")
+    #return("alert('{}');".format(envios[0]))
+
+    for envio in envios:
+        db(db.tbl_recepcion.id==envio).update(estado="T",fechaenvio=request.now)
+        salida +='''tabla_pendiente.row( $('#fila_e-{}') ).remove().draw();'''.format(envio)
     return salida
