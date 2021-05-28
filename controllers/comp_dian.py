@@ -291,7 +291,7 @@ def enviocorreo():
     salida =""
     for envio in envios:
         tarea = planificador.queue_task(fun_EnviarCorreo,
-                                        pvars=dict(envio = envio),
+                                        pvars=dict(envio = envio,  paraserver=5),
                                         timeout = 360)
         salida +='''tabla_pendiente.row( $('#fila_e-{}') ).remove().draw();'''.format(envio)
         consulta=db(db.tbl_recepcion.id==envio).select().first()

@@ -172,7 +172,7 @@ ambiente={
         #Detalle iva retenido
         {   #concepto
             'x0':  21.0,  'x1':  300.0,
-            'y0': 412.0,  'y1': 462.00004,
+            'y0': 412.0,  'y1': 463.0,
             'detalle':True,
             'selectores':[
                 {'nombre':'concepto_tasa',
@@ -190,7 +190,8 @@ ambiente={
         },
         {   #tasa
             'x0': 297.0,  'x1': 317.0,
-            'y0': 412.0,  'y1': 445.0,
+            'y0': 412.0,  'y1': 463.0,
+
             'detalle':True,                     #se ve afectado por el total
             'selectores':[
                 {'nombre':'tasa',
@@ -208,7 +209,7 @@ ambiente={
         },
         {   #col Valor Base
             'x0': 340.0 ,  'x1': 453.5,
-            'y0': 412.0,  'y1': 445.0,
+            'y0': 412.0,  'y1': 463.0,
             'detalle':True,                     #se ve afectado por el total
             'selectores':[{'nombre':'vr_base',
                         'fila':1,
@@ -225,7 +226,7 @@ ambiente={
         },
         {   #col vr Retenido
             'x0': 500.0,  'x1':590.5,
-            'y0': 412.0,  'y1': 445.0,
+            'y0': 412.0,  'y1': 463.0,
             'detalle':True,                     #se ve afectado por el total
             'selectores':[{'nombre':'col_vr_retenido',
                             'fila':1,
